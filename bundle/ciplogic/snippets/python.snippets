@@ -1,0 +1,16 @@
+snippet def
+	def ${1:method}(self${2}):
+		${3:pass}
+snippet class
+	class ${1:name}(object):
+		"""
+		${2:doc}
+		"""
+		def __init__(self${3}):
+			${4:pass}
+snippet doc
+	"""
+	${1:doc}
+	"""${2}
+snippet self.
+	self.${1:var} = $1${2}

@@ -1,0 +1,67 @@
+snippet preq
+	var ${1:module} = require("promised-node").load("$1");${2}
+snippet req
+	var ${1:module} = require("$1");${2}
+snippet class
+	export class ${1} {
+		${2}
+	}
+snippet module
+	module ${1:name} {
+		${2}
+	}
+snippet ref "Add a reference"
+	/// <reference path="${1:name.ts}"/>${2}
+snippet c
+	/**
+	 * ${1}
+	 */
+snippet @p
+	@param {${1:type}} ${2:name}
+snippet @r
+	@return {${1:type}} ${2}
+snippet then
+	then((${1:result}) => {
+		${2}
+	})
+snippet err
+	then(null, (${1:reason}) => {
+		${2}
+	})
+snippet thena
+	then((${1:result}) => {
+		${3}
+	}, (${2:reason}) => {
+	})
+snippet ret
+	return ${1};
+snippet promise
+	return new Promise((fulfill, reject) => {
+		${1}
+	});
+snippet import
+	import ${1:} = blinkts.${2:lang}.$1;
+snippet it
+	(${1:it}) => {
+		${2:}
+	}
+snippet fn
+	(${1:}) => {
+		${2:}
+	}
+snippet each
+	each((${1:it}) => {
+		${2:}
+	})
+snippet filter
+	filter((${1:it}) => {
+		${2:}
+	})
+snippet map
+	map((${1:it} => {
+		${2:}
+	})
+snippet on
+	on("${1:click}", (${2:ev}) => {
+		${3:}
+	})
