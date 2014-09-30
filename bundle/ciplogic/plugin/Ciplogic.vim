@@ -1,3 +1,6 @@
+
+:let g:snippets_dir="~/.vim/bundle/ciplogic/snippets"
+
 :set ts=4
 :set sw=4
 :set bs=2
