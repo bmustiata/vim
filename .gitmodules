@@ -4,3 +4,9 @@
 [submodule "bundle/snipmate.vim"]
 	path = bundle/snipmate.vim
 	url = http://github.com/bmustiata/snipmate.vim.git
+[submodule "bundle/guicolorscheme.vim"]
+	path = bundle/guicolorscheme.vim
+	url = https://github.com/vim-scripts/guicolorscheme.vim
+[submodule "bundle/taboo.vim"]
+	path = bundle/taboo.vim
+	url = https://github.com/gcmt/taboo.vim.git
