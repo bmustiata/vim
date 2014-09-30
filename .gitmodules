@@ -10,3 +10,6 @@
 [submodule "bundle/taboo.vim"]
 	path = bundle/taboo.vim
 	url = https://github.com/gcmt/taboo.vim.git
+[submodule "bundle/typescript-vim"]
+	path = bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
