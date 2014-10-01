@@ -58,3 +58,5 @@
 :nnoremap <silent> <C-Up> <c-w>k
 :nnoremap <silent> <C-Down> <c-w>j
 
+" a bit of mappings for UltiSnips
+let g:UltiSnipsEditSplit="vertical"

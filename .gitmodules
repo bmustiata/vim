@@ -1,9 +1,6 @@
 [submodule "bundle/NERDTree"]
 	path = bundle/NERDTree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "bundle/snipmate.vim"]
-	path = bundle/snipmate.vim
-	url = http://github.com/bmustiata/snipmate.vim.git
 [submodule "bundle/guicolorscheme.vim"]
 	path = bundle/guicolorscheme.vim
 	url = https://github.com/vim-scripts/guicolorscheme.vim
@@ -52,3 +49,6 @@
 [submodule "bundle/vim-mustache-handlebars"]
 	path = bundle/vim-mustache-handlebars
 	url = https://github.com/mustache/vim-mustache-handlebars.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
