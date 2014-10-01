@@ -28,7 +28,7 @@
 
 " show/hide the nerdtree
 :map <c-n> :NERDTreeToggle %<cr>
-:imap <c-n> <esc>:NERDTreeToggle %<cr>
+":imap <c-n> <esc>:NERDTreeToggle %<cr>
 
 " rename the current tab.
 :map <c-r>r :TabooRename 
