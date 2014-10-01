@@ -5,6 +5,8 @@
 :set sw=4
 :set bs=2
 
+:set laststatus=2
+
 " mark the syntax on
 :syntax on
 
