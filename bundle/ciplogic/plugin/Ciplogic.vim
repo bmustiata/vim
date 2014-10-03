@@ -1,5 +1,5 @@
-
-:let g:snippets_dir="~/.vim/bundle/ciplogic/snippets"
+" disable swap files
+set noswapfile
 
 :set ts=4
 :set sw=4
@@ -57,6 +57,8 @@
 :nnoremap <silent> <C-Left> <c-w>h
 :nnoremap <silent> <C-Up> <c-w>k
 :nnoremap <silent> <C-Down> <c-w>j
+
+:let g:snippets_dir="~/.vim/bundle/ciplogic/snippets"
 
 " a bit of mappings for UltiSnips
 let g:UltiSnipsEditSplit="vertical"

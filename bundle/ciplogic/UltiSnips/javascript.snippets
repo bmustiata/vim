@@ -57,3 +57,18 @@ endsnippet
 snippet this. "Assign a variable to this"
 this.${1:name} = $1;
 endsnippet
+
+snippet try "Add a try/catch statement"
+try {
+	${2:${VISUAL}}
+} catch (${1:e}) {
+	// FIXME: implement
+}
+endsnippet
+
+snippet /\.then/ "Add a then statement" r
+.then(function(${1:data}) {
+	${2:}
+});
+endsnippet
+
