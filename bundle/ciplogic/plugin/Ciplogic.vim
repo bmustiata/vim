@@ -8,7 +8,9 @@ set noswapfile
 :set laststatus=2
 
 " mark the syntax on
+:set nocp
 :syntax on
+:filetype plugin on
 
 " highlight the searches
 :set hlsearch
