@@ -1,0 +1,27 @@
+snippet a "Create a markdown link"
+[${1:name}](${2:$1}.md)
+endsnippet
+
+snippet /^\s*image\s*$/ "Create a markdown image" r
+![${1:Image Description}](${2:image.png})
+endsnippet
+
+snippet img "Create a markdown image"
+![${1:Image Description}](${2:image.png})
+endsnippet
+
+snippet table "Create a markdown table with 2 columns"
+-----------------------------------------------------
+${1:Name        Value}
+----------- -----------------------------------------
+${2:text}
+-----------------------------------------------------
+endsnippet
+
+snippet httable "Create a HT table"
+-----------------------------------------------------------
+Parameter Name    Meaning
+----------------- -----------------------------------------
+${1:}
+-----------------------------------------------------------
+endsnippet

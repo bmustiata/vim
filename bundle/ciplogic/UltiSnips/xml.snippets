@@ -1,0 +1,37 @@
+snippet launch-configuration "Create an HT Launch configuration."
+<?xml version="1.0" encoding="UTF-8"?>
+<launch-configuration>
+	<process>
+		<name>${1:workplace-default-flow2.ipd}</name>
+		<parameters>
+			<parameter>
+				<name>id${10:}</name>
+				<value>%</value>
+				<type>text/plain</type>
+			</parameter>
+		</parameters>
+	</process>
+	<metadata>
+		<description>
+			<p>${2:Run the simple flow process with a parameter.}</p>
+		</description>
+		<created>${3:`date +%d.%m.%Y`}</created>
+		<created-by>${4:Gregor Marboe}</created-by>
+		<last-modified>$3</last-modified>
+	</metadata>
+</launch-configuration>
+endsnippet
+
+snippet param "Create an HT Launch parameter."
+<parameter>
+	<name>${1:name}</name>
+	<value>%</value>
+	<type>text/plain</type>
+</parameter>
+endsnippet
+
+snippet /cdata/ "Add a CDATA thingie" r
+<![CDATA[
+${1:}
+]]>
+endsnippet
