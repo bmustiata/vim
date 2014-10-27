@@ -4,6 +4,7 @@ set noswapfile
 :set ts=4
 :set sw=4
 :set bs=2
+:set expandtab
 
 :set laststatus=2
 
@@ -31,8 +32,7 @@ set noswapfile
 :imap <c-r>q <esc>:tabclose!<cr>
 
 " show/hide the nerdtree
-:map <c-n> :NERDTreeToggle %<cr>
-":imap <c-n> <esc>:NERDTreeToggle %<cr>
+:map <c-n> :NERDTreeToggle<cr>
 
 " rename the current tab.
 :map <c-r>r :TabooRename 
