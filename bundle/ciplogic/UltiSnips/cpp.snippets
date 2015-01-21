@@ -1,0 +1,27 @@
+snippet c "Multiline comment"
+/**
+ * ${1:}
+ */
+endsnippet
+
+snippet ifdef "Create an #ifdef statement"
+#ifdef ${1:NAME}
+	${2:}
+#endif // $1
+endsnippet
+
+snippet def "Create a #define statement"
+#define ${1:NAME}
+endsnippet
+
+snippet ifndef "Create a #define statement if an ifndef is present."
+#ifndef ${1:NAME}
+	${2:}
+#endif // not $1
+endsnippet
+
+snippet br "Create a big comment block to show a different section"
+/////////////////////////////////////////////////////////////////////////////
+//// ${1:}
+/////////////////////////////////////////////////////////////////////////////
+endsnippet
