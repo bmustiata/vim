@@ -5,14 +5,14 @@ snippet html "Create a HTML page"
 		<title>${1:page}</title>
 	</head>
 	<body>
-		${2:}
+		${0:}
 	</body>
 </html>
 endsnippet
 
 snippet form "Create a form"
 <form action="${1:url}" method="${2:post}">
-	${3:}
+	${0:}
 </form>
 endsnippet
 
@@ -20,3 +20,43 @@ snippet inp "Add an input"
 <input name="${1:name}" type="${2:text}"/>
 endsnippet
 
+snippet < "create a tag"
+<${1:tag}>
+	${0:}
+</$1>
+endsnippet
+
+snippet livereload "Adds the live reload"
+<!-- Make sure to remove this in production -->
+<!-- include it above the </body> tag -->
+<script>
+var ws;
+
+function socket() {
+	ws = new WebSocket("ws://127.0.0.1:${1:8084}");
+	ws.onmessage = function ( e ) {
+		var data = JSON.parse(e.data);
+		if ( data.r ) {
+			location.reload();
+		}
+	};
+}
+
+setInterval(function () {
+	if ( ws ) {
+		if ( ws.readyState !== 1 ) {
+			socket();
+		}
+	} else {
+		socket();
+	}
+}, ${2:1000});
+</script>
+
+endsnippet
+
+snippet /<?divc/ "Creates a div with a given class" r
+<div class="${1:css-class}">
+	${0:}
+</div>
+endsnippet
