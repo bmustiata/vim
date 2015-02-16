@@ -93,3 +93,11 @@ map ,u :SpliceUse<cr>
 map ,q :wa<cr>:qa<cr>
 map ,CC :cq<cr>
 
+"
+" Start vim maximized.
+"
+if has("gui_running")
+    " GUI is running or is about to start (maximize window)
+    set lines=999 columns=999
+endif
+
