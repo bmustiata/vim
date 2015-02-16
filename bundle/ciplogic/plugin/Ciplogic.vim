@@ -88,10 +88,22 @@ map ,s :SpliceScroll<cr>
 map ,n :SpliceNext<cr>
 map ,N :SplicePrev<cr>
 map ,<space> :SpliceLayout<cr>
+map ,u1 :SpliceUse1<cr>
+map ,u2 :SpliceUse2<cr>
 map ,u :SpliceUse<cr>
 
 map ,q :wa<cr>:qa<cr>
 map ,CC :cq<cr>
+
+" set the scrolling and diff by default on splicing
+let g:splice_initial_diff_grid=1
+let g:splice_initial_diff_compare=1
+let splice_initial_diff_path=4
+
+let g:splice_initial_scrollbind_grid=1
+let g:splice_initial_scrollbind_loupe=1
+let g:splice_initial_scrollbind_compare=1
+let g:splice_initial_scrollbind_path=1
 
 "
 " Start vim maximized.
