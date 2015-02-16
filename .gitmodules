@@ -61,3 +61,6 @@
 [submodule "bundle/splice.vim"]
 	path = bundle/splice.vim
 	url = https://github.com/bmustiata/splice.vim
+[submodule "bundle/neocomplete.vim"]
+	path = bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim
