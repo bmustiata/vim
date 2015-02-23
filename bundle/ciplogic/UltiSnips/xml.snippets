@@ -42,6 +42,14 @@ snippet pom "Create a POM file"
 	<groupId>${1:group}</groupId>
 	<artifactId>${2:artifact}</artifactId>
 	<version>${3:version}</version>
-	${4:}
+	${0:}
 </project>
+endsnippet
+
+snippet dependency "Add a maven dependency"
+<dependency>
+	<groupId>${1:group}</groupId>
+	<artifactId>${2:artifact}</artifactId>
+	<version>${3:version}${0:}</version>
+</dependency>
 endsnippet
