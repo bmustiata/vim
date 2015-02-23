@@ -119,3 +119,7 @@ au BufRead,BufNewFile *.ipd setfiletype xml
 au BufRead,BufNewFile *.itx setfiletype xml
 au BufRead,BufNewFile *.idx setfiletype xml
 
+" Command for pretty format XMLs
+command XmlPretty execute "%!XMLLINT_INDENT='    ' xmllint --format -"
+
+
