@@ -113,3 +113,13 @@ if has("gui_running")
     set lines=999 columns=999
 endif
 
+"
+" Associate Infinica files with XML
+au BufRead,BufNewFile *.ipd setfiletype xml
+au BufRead,BufNewFile *.itx setfiletype xml
+au BufRead,BufNewFile *.idx setfiletype xml
+
+" Command for pretty format XMLs
+command XmlPretty execute "%!XMLLINT_INDENT='    ' xmllint --format -"
+
+

@@ -141,6 +141,7 @@ snippet livereload "Creates the live reload necessary code."
 
 var ws;
 
+// you need node-live-reload running on the given port.
 function socket() {
 	ws = new WebSocket("ws://127.0.0.1:${1:8084}");
 	ws.onmessage = function ( e ) {
@@ -159,7 +160,7 @@ setInterval(function () {
 	} else {
 		socket();
 	}
-}, ${2:1000});
+}, ${2:100});
 
 })();
 endsnippet
