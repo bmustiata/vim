@@ -4,11 +4,7 @@ snippet launch-configuration "Create an HT Launch configuration."
 	<process>
 		<name>${1:workplace-default-flow2.ipd}</name>
 		<parameters>
-			<parameter>
-				<name>id${10:}</name>
-				<value>%</value>
-				<type>text/plain</type>
-			</parameter>
+			${0:}
 		</parameters>
 	</process>
 	<metadata>
@@ -23,16 +19,20 @@ snippet launch-configuration "Create an HT Launch configuration."
 endsnippet
 
 snippet param "Create an HT Launch parameter."
+<!--
+	$1 - ${3:description}
+-->
 <parameter>
 	<name>${1:name}</name>
-	<value>%</value>
+	<value>${2:%}</value>
 	<type>text/plain</type>
 </parameter>
+${0:}
 endsnippet
 
 snippet /cdata/ "Add a CDATA thingie" r
 <![CDATA[
-${1:}
+${0:}
 ]]>
 endsnippet
 
@@ -45,3 +45,24 @@ snippet pom "Create a POM file"
 	${4:}
 </project>
 endsnippet
+
+snippet mn "Create a multi node."
+<${1:name}>
+	${0:}
+</${1/(.*?)\s.*/$1/}>
+endsnippet
+
+snippet n "Create a single node."
+<${1:name}>${0:}</${1/(.*?)\s.*/$1/}>
+endsnippet
+
+snippet c "Create a comment."
+<!-- ${0:} -->
+endsnippet
+
+snippet mc "Create a multi line comment."
+<!--
+	${0:}
+-->
+endsnippet
+
