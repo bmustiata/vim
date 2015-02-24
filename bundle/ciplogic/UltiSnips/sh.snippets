@@ -7,6 +7,13 @@ endsnippet
 snippet if "Create a bash if statement"
 if [[ ${1:condition} ]]; then
 	${0:}
-fi
+fi # [[ $1 ]]
 endsnippet
 
+snippet ife "Create a bash if/else statement"
+if [[ ${1:condition} ]]; then
+	${0:}
+else # not [[ $1 ]]
+
+fi   # else [[ $1 ]]
+endsnippet

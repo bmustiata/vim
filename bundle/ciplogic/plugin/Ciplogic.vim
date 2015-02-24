@@ -124,8 +124,6 @@ command PrettyXml execute "%!XMLLINT_INDENT='    ' xmllint --format -"
 command PrettyJson execute "%!python -m json.tool"
 
 " Allow navigating inside wrapped lines
-imap <silent> <Down> <C-o>gj
-imap <silent> <Up> <C-o>gk
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 
