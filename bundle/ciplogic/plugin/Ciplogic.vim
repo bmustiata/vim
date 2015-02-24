@@ -119,7 +119,13 @@ au BufRead,BufNewFile *.ipd setfiletype xml
 au BufRead,BufNewFile *.itx setfiletype xml
 au BufRead,BufNewFile *.idx setfiletype xml
 
-" Command for pretty format XMLs
-command XmlPretty execute "%!XMLLINT_INDENT='    ' xmllint --format -"
+" Command for pretty format XMLs and JSON
+command PrettyXml execute "%!XMLLINT_INDENT='    ' xmllint --format -"
+command PrettyJson execute "%!python -m json.tool"
 
+" Allow navigating inside wrapped lines
+imap <silent> <Down> <C-o>gj
+imap <silent> <Up> <C-o>gk
+nmap <silent> <Down> gj
+nmap <silent> <Up> gk
 

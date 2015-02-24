@@ -20,6 +20,10 @@ snippet inp "Add an input"
 <input name="${1:name}" type="${2:text}"/>
 endsnippet
 
+snippet srcscript "Adds a JS script reference."
+<script type="text/javascript" src="${0:}"></script>
+endsnippet
+
 snippet < "create a tag"
 <${1:tag}>
 	${0:}
@@ -50,7 +54,7 @@ setInterval(function () {
 	} else {
 		socket();
 	}
-}, ${2:1000});
+}, ${2:100});
 </script>
 
 endsnippet
