@@ -31,30 +31,34 @@ snippet < "create a tag"
 endsnippet
 
 snippet livereload "Adds the live reload"
-<!-- Make sure to remove this in production -->
-<!-- include it above the </body> tag -->
-<script>
-var ws;
+<script type="text/javascript">
+(function() {
+	// Make sure to remove this in production.
+	// include it above the </body> tag
+	// you need node-live-reload running on the given port.
 
-function socket() {
-	ws = new WebSocket("ws://127.0.0.1:${1:8084}");
-	ws.onmessage = function ( e ) {
-		var data = JSON.parse(e.data);
-		if ( data.r ) {
-			location.reload();
-		}
-	};
-}
+	var ws;
 
-setInterval(function () {
-	if ( ws ) {
-		if ( ws.readyState !== 1 ) {
+	function socket() {
+		ws = new WebSocket("ws://127.0.0.1:${1:8084}");
+		ws.onmessage = function ( e ) {
+			var data = JSON.parse(e.data);
+			if ( data.r ) {
+				location.reload();
+			}
+		};
+	}
+
+	setInterval(function () {
+		if ( ws ) {
+			if ( ws.readyState !== 1 ) {
+				socket();
+			}
+		} else {
 			socket();
 		}
-	} else {
-		socket();
-	}
-}, ${2:100});
+	}, ${2:100});
+})();
 </script>
 
 endsnippet
