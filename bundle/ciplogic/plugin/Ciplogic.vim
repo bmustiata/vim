@@ -139,6 +139,11 @@ au BufRead,BufNewFile Gruntfile.js set filetype=Gruntfile.javascript
 au BufRead,BufNewFile *.json set filetype=json.javascript
 au BufRead,BufNewFile package.json set filetype=package_json.json.javascript
 
+"
+" Text file mappings.
+"
+au BufRead,BufNewFile LICENSE set filetype=license_txt
+
 " Command for pretty format XMLs and JSON
 command PrettyXml execute "%!XMLLINT_INDENT='    ' xmllint --format -"
 command PrettyJson execute "%!python -m json.tool"
