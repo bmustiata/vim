@@ -1,5 +1,31 @@
-snippet compass "Add compass NPM tasks"
+snippet grunt "Adds a default empty grunt configuration"
+/**
+ * Grunt project configuration.
+ */
+module.exports = function(grunt) {
+    // configuration for the plugins.
+    grunt.initConfig({
+        ${0:}
+    });
+
+    // load NPM tasks:
+    // grunt.loadNpmTasks('grunt-contrib-watch');
+
+    // register our tasks:
+    // grunt.registerTask('default', ['jshint']);
+};
+endsnippet
+
+snippet plugcompass "Add compass Grunt NPM tasks"
 grunt.loadNpmTasks('grunt-contrib-compass');${0:}
+endsnippet
+
+snippet plugcopy "Add copy Grunt NPM plugin"
+grunt.loadNpmTasks('grunt-contrib-copy');${0:}
+endsnippet
+
+snippet plugclean "Add clean Grunt NPM plugin"
+grunt.loadNpmTasks('grunt-contrib-clean');${0:}
 endsnippet
 
 snippet compassConfig "Adds the compass config for the plugin"
@@ -11,6 +37,37 @@ compass: {
 			// environment: 'production'
 		}
 	}
+}
+endsnippet
+
+snippet copyConfig "Adds the copy config for the plugin."
+copy: {
+	${1:dist} : {
+		files: [
+			{ expand: true, cwd: '${2:src/}', src: ['${3:**}'], dest: '${4:dest/}' }${0:}
+		]
+	}
+}
+endsnippet
+
+snippet copyTarget "Adds another target for a copy config task"
+${1:dist} : {
+	files: [
+		{ expand: true, cwd: '${2:src/}', src: ['${3:**}'], dest: '${4:dest/}' }${0:}
+	]
+}
+endsnippet
+
+snippet copy "Adds a copy object for the files of the copy task config."
+{ expand: true, cwd: '${1:src/}', src: ['${2:**}'], dest: '${3:dest/}' }${0:}
+endsnippet
+
+
+snippet cleanConfig "Adds the clean config for the plugin."
+clean: {
+	${1:dist} : [
+		"${2:remove-path/}"${0:}
+	]
 }
 endsnippet
 

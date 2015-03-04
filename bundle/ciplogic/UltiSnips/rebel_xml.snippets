@@ -1,0 +1,20 @@
+snippet rebel_xml "Create a rebel.xml for a webapp"
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd">
+
+    <classpath>
+        <dir name="${1:}/target/classes">${0:}
+        </dir>
+    </classpath>
+
+    <web>
+        <link target="/">
+            <dir name="$1/src/main/webapp">
+            </dir>
+        </link>
+    </web>
+
+</application>
+
+endsnippet
+

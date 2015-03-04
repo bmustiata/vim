@@ -1,0 +1,19 @@
+snippet pom "Create a POM file"
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>${1:group}</groupId>
+	<artifactId>${2:artifact}</artifactId>
+	<version>${3:version}</version>
+	${0:}
+</project>
+endsnippet
+
+snippet dependency "Add a maven dependency"
+<dependency>
+	<groupId>${1:group}</groupId>
+	<artifactId>${2:artifact}</artifactId>
+	<version>${3:version}${0:}</version>
+</dependency>
+endsnippet
+
+

@@ -115,9 +115,21 @@ endif
 
 "
 " Associate Infinica files with XML
-au BufRead,BufNewFile *.ipd setfiletype xml
-au BufRead,BufNewFile *.itx setfiletype xml
-au BufRead,BufNewFile *.idx setfiletype xml
+au BufRead,BufNewFile *.ipd setfiletype ipd_xml.xml
+au BufRead,BufNewFile *.itx setfiletype itx_xml.xml
+au BufRead,BufNewFile *.idx setfiletype idx_xml.xml
+
+au BufRead,BufNewFile .metadata.xml set filetype=InfinicaWorkplaceLaunchConfigurationFolder.xml
+
+function! LaunchConfiguration()
+    set filetype=InfinicaWorkplaceLaunchConfiguration.xml
+endfunction
+command LaunchConfiguration call LaunchConfiguration()
+"
+" Java mappings.
+"
+au BufRead,BufNewFile pom.xml set filetype=pom_xml.xml
+au BufRead,BufNewFile rebel.xml set filetype=rebel_xml.xml
 
 " Command for pretty format XMLs and JSON
 command PrettyXml execute "%!XMLLINT_INDENT='    ' xmllint --format -"

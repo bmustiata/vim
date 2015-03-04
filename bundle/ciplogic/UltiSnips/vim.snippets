@@ -79,3 +79,17 @@ function! ${1:Name}()
 endfunction
 endsnippet
 
+snippet command "Create a command"
+command ${1:CommandName} call $1()${0:}
+endsnippet
+
+snippet au "Associate a file extension or name with a given file type"
+au BufRead,BufNewFile ${1:*.file} set filetype=${2:type}
+endsnippet
+
+snippet c "Adds a vim comment."
+"
+" ${0:}
+"
+endsnippet
+
