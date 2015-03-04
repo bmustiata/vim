@@ -125,11 +125,17 @@ function! LaunchConfiguration()
     set filetype=InfinicaWorkplaceLaunchConfiguration.xml
 endfunction
 command LaunchConfiguration call LaunchConfiguration()
+
 "
 " Java mappings.
 "
 au BufRead,BufNewFile pom.xml set filetype=pom_xml.xml
 au BufRead,BufNewFile rebel.xml set filetype=rebel_xml.xml
+
+"
+" JavaScript file mappings.
+"
+au BufRead,BufNewFile Gruntfile.js set filetype=Gruntfile.javascript
 
 " Command for pretty format XMLs and JSON
 command PrettyXml execute "%!XMLLINT_INDENT='    ' xmllint --format -"

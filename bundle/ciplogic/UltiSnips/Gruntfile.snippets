@@ -28,6 +28,10 @@ snippet plugclean "Add clean Grunt NPM plugin"
 grunt.loadNpmTasks('grunt-contrib-clean');${0:}
 endsnippet
 
+snippet plug "Add a Grunt NPM plugin"
+grunt.loadNpmTasks('grunt-contrib-${1:clean}');${0:}
+endsnippet
+
 snippet compassConfig "Adds the compass config for the plugin"
 compass: {
 	${1:dist} : {
