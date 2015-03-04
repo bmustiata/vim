@@ -28,6 +28,10 @@ snippet plugclean "Add clean Grunt NPM plugin"
 grunt.loadNpmTasks('grunt-contrib-clean');${0:}
 endsnippet
 
+snippet plugwatch "Add watch Grunt NPM plugin"
+grunt.loadNpmTasks('grunt-contrib-watch');${0:}
+endsnippet
+
 snippet plug "Add a Grunt NPM plugin"
 grunt.loadNpmTasks('grunt-contrib-${1:clean}');${0:}
 endsnippet
@@ -66,7 +70,6 @@ snippet copy "Adds a copy object for the files of the copy task config."
 { expand: true, cwd: '${1:src/}', src: ['${2:**}'], dest: '${3:dest/}' }${0:}
 endsnippet
 
-
 snippet cleanConfig "Adds the clean config for the plugin."
 clean: {
 	${1:dist} : [
@@ -74,4 +77,22 @@ clean: {
 	]
 }
 endsnippet
+
+snippet watchConfig "Adds a watch config for the plugin."
+watch : {
+	${1:dist} : {
+		files: [ ${2:'src/*'} ],
+		tasks: [ ${3:'default'} ]
+	}${0:}
+}
+endsnippet
+
+snippet watchTarget "Adds a watch target for the plugin."
+${1:dist} : {
+	files: [ ${2:'src/*'} ],
+	tasks: [ ${3:'default'} ]
+}${0:}
+endsnippet
+
+
 
