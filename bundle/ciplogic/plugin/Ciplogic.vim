@@ -136,6 +136,8 @@ au BufRead,BufNewFile rebel.xml set filetype=rebel_xml.xml
 " JavaScript file mappings.
 "
 au BufRead,BufNewFile Gruntfile.js set filetype=Gruntfile.javascript
+au BufRead,BufNewFile *.json set filetype=json.javascript
+au BufRead,BufNewFile package.json set filetype=package_json.json.javascript
 
 " Command for pretty format XMLs and JSON
 command PrettyXml execute "%!XMLLINT_INDENT='    ' xmllint --format -"

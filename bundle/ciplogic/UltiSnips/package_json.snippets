@@ -1,0 +1,34 @@
+snippet package "Create a NPM package.json"
+{
+    "name": "${1:project-name}",
+    "description": "${2:description}",
+    "author": [{
+        "name" : "${3:Bogdan Mustiata}",
+        "email" : "${4:bogdan.mustiata@gmail.com}"
+    }],
+    "version": "${5:0.1.0}",
+    "dependencies": {
+		${6:}${0:}
+    },
+    "keywords": [],
+    "main": "./lib/$1.js",
+    "bugs": {
+        "url": "https://github.com/${7:bmustiata}/$1/issues"
+    },
+    "licenses": [
+        {
+            "type": "${8:BSD}",
+            "url": "https://github.com/$7/$1/blob/master/LICENSE"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/$7/$1.git"
+    },
+    "readme": "$2",
+    "readmeFilename": "README.md",
+    "homepage": "${9:http://blog.ciplogic.com}"
+}
+endsnippet
+
+
