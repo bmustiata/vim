@@ -17,7 +17,9 @@ set noswapfile
 :set hlsearch
 
 " auto close all the folds when opening a file
+" and set the fold method as syntax.
 :set foldlevel=99
+:set foldmethod=syntax
 
 " open a new tab.
 :map <c-e> :tabnew<cr>
@@ -115,9 +117,9 @@ endif
 
 "
 " Associate Infinica files with XML
-au BufRead,BufNewFile *.ipd setfiletype ipd_xml.xml
-au BufRead,BufNewFile *.itx setfiletype itx_xml.xml
-au BufRead,BufNewFile *.idx setfiletype idx_xml.xml
+au BufRead,BufNewFile *.ipd set filetype=ipd_xml.xml
+au BufRead,BufNewFile *.itx set filetype=itx_xml.xml
+au BufRead,BufNewFile *.idx set filetype=idx_xml.xml
 
 au BufRead,BufNewFile .metadata.xml set filetype=InfinicaWorkplaceLaunchConfigurationFolder.xml
 
@@ -152,3 +154,21 @@ command PrettyJson execute "%!python -m json.tool"
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 
+" Allow working with tabs as actual tabs:
+function! Tabs4()
+    setl tabstop=4
+    setl noexpandtab
+endfunction
+command Tabs4 call Tabs4()
+
+function! Tabs8()
+    setl tabstop=8
+    setl noexpandtab
+endfunction
+command Tabs8 call Tabs8()
+
+"
+" Show invisible characters.
+"
+set listchars=tab:▸\ ,eol:¬
+nmap ,l :set list!<CR>

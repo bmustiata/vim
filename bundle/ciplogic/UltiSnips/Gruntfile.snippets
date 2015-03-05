@@ -12,8 +12,29 @@ module.exports = function(grunt) {
     // grunt.loadNpmTasks('grunt-contrib-watch');
 
     // register our tasks:
-    // grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('default', []);
 };
+endsnippet
+
+snippet grunt_load "Adds a default empty grunt configuration, loading plugins automatically."
+/**
+ * Grunt project configuration.
+ */
+module.exports = function(grunt) {
+	require('load-grunt-tasks')(grunt);
+
+	// configuration for the plugins.
+	grunt.initConfig({
+		${0:}
+	});
+
+	// register our tasks:
+	grunt.registerTask('default', []);
+};
+endsnippet
+
+snippet load-grunt-tasks "Loads the grunt tasks using load-grunt-tasks"
+require('load-grunt-tasks')(grunt);${0:}
 endsnippet
 
 snippet plugcompass "Add compass Grunt NPM tasks"
@@ -32,8 +53,26 @@ snippet plugwatch "Add watch Grunt NPM plugin"
 grunt.loadNpmTasks('grunt-contrib-watch');${0:}
 endsnippet
 
+snippet pluges6 "Add ES6 Transpiler Grunt NPM plugin"
+grunt.loadNpmTasks('grunt-es6-transpiler');${0:}
+endsnippet
+
+snippet plugtraceur "Add ES6 Traceur Grunt NPM Plugin"
+grunt.loadNpmTasks('grunt-traceur');${0:}
+endsnippet
+
 snippet plug "Add a Grunt NPM plugin"
 grunt.loadNpmTasks('grunt-contrib-${1:clean}');${0:}
+endsnippet
+
+snippet config "Adds a config part"
+${1:pluginName} : {
+	${2:dist} : {
+		files : [
+			{ expand: true, cwd: '${3:src/}', src: ['${4:**}'], dest: '${5:dest/}' }${0:}
+		]
+	}
+}
 endsnippet
 
 snippet compassConfig "Adds the compass config for the plugin"
@@ -94,5 +133,30 @@ ${1:dist} : {
 }${0:}
 endsnippet
 
+snippet es6transpilerConfig "Adds the ES6 transpiler plugin configuration"
+es6transpiler: {
+	${1:dist}: {
+		files : [
+			{ expand: true, cwd: '${2:src/}', src: ['${3:*.js}'], dest: '${4:dest/}' }
+		]
+	}${0:}
+}
+endsnippet
 
+snippet traceurConfig "Adds a traceur configuration for the plugin."
+traceur : {
+	options: {
+		moduleNaming: {
+			stripPrefix: "$3",
+			addPrefix: "${6:}"
+		},
+		copyRuntime: '${5:$4}'
+	},
+	${1:dist} : {
+		files : [
+			{ expand: true, cwd: '${2:src/}', src: ['${3:**}'], dest: '${4:dest/}' }${0:}
+		]
+	}
+}
 
+endsnippet

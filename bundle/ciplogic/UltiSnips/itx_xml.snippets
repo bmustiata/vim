@@ -1,0 +1,20 @@
+snippet composer "Adds a composer element into the template."
+<composer-element type="${1:custom}">${2:}</composer-element>${0:}
+endsnippet
+
+snippet block "Adds a block."
+<block>
+	${0:}
+</block>
+endsnippet
+
+snippet dynamic "Adds a dynamic value."
+<dynamic-value expression="${1:xpath}"/>${0:}
+endsnippet
+
+snippet text "Adds a text"
+<text>
+	<text-contents>${1:}</text-contents>
+</text>${0:}
+endsnippet
+
