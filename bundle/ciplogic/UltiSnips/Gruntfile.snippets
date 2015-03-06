@@ -1,18 +1,21 @@
+#############################################################################
+# General Grunt Configurations.
+#############################################################################
 snippet grunt "Adds a default empty grunt configuration"
 /**
  * Grunt project configuration.
  */
 module.exports = function(grunt) {
-    // configuration for the plugins.
-    grunt.initConfig({
-        ${0:}
-    });
+	// configuration for the plugins.
+	grunt.initConfig({
+		${0:}
+	});
 
-    // load NPM tasks:
-    // grunt.loadNpmTasks('grunt-contrib-watch');
+	// load NPM tasks:
+	// grunt.loadNpmTasks('grunt-contrib-watch');
 
-    // register our tasks:
-    grunt.registerTask('default', []);
+	// register our tasks:
+	grunt.registerTask('default', []);
 };
 endsnippet
 
@@ -37,32 +40,11 @@ snippet load-grunt-tasks "Loads the grunt tasks using load-grunt-tasks"
 require('load-grunt-tasks')(grunt);${0:}
 endsnippet
 
-snippet plugcompass "Add compass Grunt NPM tasks"
-grunt.loadNpmTasks('grunt-contrib-compass');${0:}
-endsnippet
-
-snippet plugcopy "Add copy Grunt NPM plugin"
-grunt.loadNpmTasks('grunt-contrib-copy');${0:}
-endsnippet
-
-snippet plugclean "Add clean Grunt NPM plugin"
-grunt.loadNpmTasks('grunt-contrib-clean');${0:}
-endsnippet
-
-snippet plugwatch "Add watch Grunt NPM plugin"
-grunt.loadNpmTasks('grunt-contrib-watch');${0:}
-endsnippet
-
-snippet pluges6stranspiler "Add ES6 Transpiler Grunt NPM plugin"
-grunt.loadNpmTasks('grunt-es6-transpiler');${0:}
-endsnippet
-
-snippet pluges6traceur "Add ES6 Traceur Grunt NPM Plugin"
-grunt.loadNpmTasks('grunt-traceur');${0:}
-endsnippet
-
+#############################################################################
+# Generic Plugins
+#############################################################################
 snippet plug "Add a Grunt NPM plugin"
-grunt.loadNpmTasks('grunt-contrib-${1:clean}');${0:}
+grunt.loadNpmTasks('${1:grunt-contrib-clean}');${0:}
 endsnippet
 
 snippet config "Adds a config part"
@@ -75,6 +57,17 @@ ${1:pluginName} : {
 }
 endsnippet
 
+snippet file "Adds a files slector for grunt."
+{ expand: true, cwd: '${1:src/}', src: ['${2:**}'], dest: '${3:dest/}' }${0:}
+endsnippet
+
+#############################################################################
+# Compass Support
+#############################################################################
+snippet plugcompass "Add compass Grunt NPM tasks"
+grunt.loadNpmTasks('grunt-contrib-compass');${0:}
+endsnippet
+
 snippet compassConfig "Adds the compass config for the plugin"
 compass: {
 	${1:dist} : {
@@ -85,6 +78,13 @@ compass: {
 		}
 	}
 }
+endsnippet
+
+#############################################################################
+# Copy Support
+#############################################################################
+snippet plugcopy "Add copy Grunt NPM plugin"
+grunt.loadNpmTasks('grunt-contrib-copy');${0:}
 endsnippet
 
 snippet copyConfig "Adds the copy config for the plugin."
@@ -105,8 +105,11 @@ ${1:dist} : {
 }
 endsnippet
 
-snippet copy "Adds a copy object for the files of the copy task config."
-{ expand: true, cwd: '${1:src/}', src: ['${2:**}'], dest: '${3:dest/}' }${0:}
+#############################################################################
+# Clean Support
+#############################################################################
+snippet plugclean "Add clean Grunt NPM plugin"
+grunt.loadNpmTasks('grunt-contrib-clean');${0:}
 endsnippet
 
 snippet cleanConfig "Adds the clean config for the plugin."
@@ -115,6 +118,13 @@ clean: {
 		"${2:remove-path/}"${0:}
 	]
 }
+endsnippet
+
+#############################################################################
+# Watch Support
+#############################################################################
+snippet plugwatch "Add watch Grunt NPM plugin"
+grunt.loadNpmTasks('grunt-contrib-watch');${0:}
 endsnippet
 
 snippet watchConfig "Adds a watch config for the plugin."
@@ -133,6 +143,13 @@ ${1:dist} : {
 }${0:}
 endsnippet
 
+#############################################################################
+# ES6 Transpiler
+#############################################################################
+snippet pluges6stranspiler "Add ES6 Transpiler Grunt NPM plugin"
+grunt.loadNpmTasks('grunt-es6-transpiler');${0:}
+endsnippet
+
 snippet es6transpilerConfig "Adds the ES6 transpiler plugin configuration"
 es6transpiler: {
 	${1:dist}: {
@@ -141,6 +158,13 @@ es6transpiler: {
 		]
 	}${0:}
 }
+endsnippet
+
+#############################################################################
+# ES6 Tracer (google) Transpiler
+#############################################################################
+snippet pluges6traceur "Add ES6 Traceur Grunt NPM Plugin"
+grunt.loadNpmTasks('grunt-traceur');${0:}
 endsnippet
 
 snippet es6traceurConfig "Adds a traceur configuration for the plugin."
@@ -158,4 +182,15 @@ traceur : {
 		]
 	}
 }
+endsnippet
+
+#############################################################################
+# TypeScript
+#############################################################################
+snippet plugtsc "Adds the TypeScript Grunt NPM Plugin"
+grunt.loadNpmTasks('grunt-tsc');${0:}
+endsnippet
+
+snippet tscConfig "Adds a TypeScript configuration."
+
 endsnippet
