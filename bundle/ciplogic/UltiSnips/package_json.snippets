@@ -10,24 +10,27 @@ snippet package "Create a NPM package.json"
     "dependencies": {
 		${6:}${0:}
     },
+	"devDependencies" : {
+		${7:}
+	},
     "keywords": [],
     "main": "./lib/$1.js",
     "bugs": {
-        "url": "https://github.com/${7:bmustiata}/$1/issues"
+        "url": "https://github.com/${8:bmustiata}/$1/issues"
     },
     "licenses": [
         {
-            "type": "${8:BSD}",
-            "url": "https://github.com/$7/$1/blob/master/LICENSE"
+            "type": "${9:BSD}",
+            "url": "https://github.com/$8/$1/blob/master/LICENSE"
         }
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/$7/$1.git"
+        "url": "https://github.com/$8/$1.git"
     },
     "readme": "$2",
     "readmeFilename": "README.md",
-    "homepage": "${9:http://blog.ciplogic.com}"
+    "homepage": "${10:http://blog.ciplogic.com}"
 }
 endsnippet
 

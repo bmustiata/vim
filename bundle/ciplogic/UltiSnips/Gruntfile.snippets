@@ -194,3 +194,23 @@ endsnippet
 snippet tscConfig "Adds a TypeScript configuration."
 
 endsnippet
+
+#############################################################################
+# Mocha
+#############################################################################
+snippet plugmocha "Adds the Mocha TypeScript Grunt NPM plugin."
+grunt.loadNpmTasks('grunt-mocha-test');
+endsnippet
+
+snippet mochaTestConfig "Adds a mochaTest configuration for the plugin."
+mochaTest: {
+	${1:test}: {
+		options: {
+			reporter: 'spec',
+			captureFile: '${2:target/tests_results.txt}'
+		},
+		src: ['${3:test/**/*.js}']
+	}
+}
+endsnippet
+

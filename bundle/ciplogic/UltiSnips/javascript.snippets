@@ -169,9 +169,33 @@ endsnippet
 
 
 snippet req "Require a module."
-${1:name} = require("$1");${0:}
+require("$1")${0:}
 endsnippet
 
 snippet @p "Add a JsDoc parameter."
 @param {${1:Object}} ${2:name} ${3:description}
+endsnippet
+
+snippet @t "Add a JsDoc type."
+@type {${1:Object}}
+endsnippet
+
+snippet @r "Adds a JSDoc return."
+@return {${1:Object}}
+endsnippet
+
+snippet c "Add a comment."
+/**
+ * ${0:}
+ */
+endsnippet
+
+snippet cs "Comment section"
+// ==========================================================================
+// ${0:}
+// ==========================================================================
+endsnippet
+
+snippet log "Add a console.log"
+console.log(${0:});
 endsnippet
