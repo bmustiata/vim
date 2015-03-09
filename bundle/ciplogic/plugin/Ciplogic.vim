@@ -1,10 +1,7 @@
 " disable swap files
 set noswapfile
 
-:set ts=4
-:set sw=4
 :set bs=2
-:set expandtab
 
 :set laststatus=2
 
@@ -122,19 +119,6 @@ command PrettyJson execute "%!python -m json.tool"
 " Allow navigating inside wrapped lines
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
-
-" Allow working with tabs as actual tabs:
-function! Tabs4()
-    setl tabstop=4
-    setl noexpandtab
-endfunction
-command Tabs4 call Tabs4()
-
-function! Tabs8()
-    setl tabstop=8
-    setl noexpandtab
-endfunction
-command Tabs8 call Tabs8()
 
 "
 " Show invisible characters.
