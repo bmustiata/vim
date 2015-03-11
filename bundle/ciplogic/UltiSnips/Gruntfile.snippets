@@ -61,6 +61,14 @@ snippet file "Adds a files slector for grunt."
 { expand: true, cwd: '${1:src/}', src: ['${2:**}'], dest: '${3:dest/}' }${0:}
 endsnippet
 
+snippet target "Adds another target for a config task"
+${1:dist} : {
+	files: [
+		{ expand: true, cwd: '${2:src/}', src: ['${3:**}'], dest: '${4:dest/}' }${0:}
+	]
+}
+endsnippet
+
 #############################################################################
 # Compass Support
 #############################################################################
@@ -74,6 +82,7 @@ compass: {
 		options: {
 			sassDir: '${2:scss}',
 			cssDir: '${3:css}',
+			sourcemap: true
 			// environment: 'production'
 		}
 	}
@@ -94,14 +103,6 @@ copy: {
 			{ expand: true, cwd: '${2:src/}', src: ['${3:**}'], dest: '${4:dest/}' }${0:}
 		]
 	}
-}
-endsnippet
-
-snippet copyTarget "Adds another target for a copy config task"
-${1:dist} : {
-	files: [
-		{ expand: true, cwd: '${2:src/}', src: ['${3:**}'], dest: '${4:dest/}' }${0:}
-	]
 }
 endsnippet
 
@@ -214,3 +215,41 @@ mochaTest: {
 }
 endsnippet
 
+#############################################################################
+# Grunt-Sync
+#############################################################################
+snippet plugsync "Adds the Grunt Sync Copy NPM plugin."
+grunt.loadNpmTasks('grunt-sync');
+endsnippet
+
+snippet syncConfig "Adds the grunt-sync configuration for the plugin."
+sync : {
+	${1:dist} : {
+		// pretend: true,
+		verbose: ${2:true},
+		files : [
+			{ expand: true, cwd: '${3:src/}', src: ['${4:**}'], dest: '${5:dest/}' }${0:}
+		]
+	}
+}
+endsnippet
+
+#############################################################################
+# Concat
+#############################################################################
+snippet plugconcat "Add the Grunt Concat NPM plugin."
+grunt.loadNpmTasks('grunt-contrib-concat');
+endsnippet
+
+snippet concatConfig "Adds the concat configuration for the plugin."
+concat: {
+	options: {
+		sourceMap: ${1:true}
+	},
+	${2:dist}: {
+		files : [
+			{ expand: true, cwd: '${3:src/}', src: ['${4:**}'], dest: '${5:dest/}' }${0:}
+		]
+	}
+}
+endsnippet
