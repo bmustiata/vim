@@ -42,7 +42,7 @@ function ${1:}(${2:}) {
 indent = match.string[0: len(match.string) - len(match.group(1))]
 for arg in re.split("\s*,\s*", t[2]):
 	if arg != "":
-		snip.rv += '    this.%s = %s\n%s' % (arg, arg, indent)
+		snip.rv += '    this.%s = %s;\n%s' % (arg, arg, indent)
 `	${0:${VISUAL}}
 }
 endsnippet

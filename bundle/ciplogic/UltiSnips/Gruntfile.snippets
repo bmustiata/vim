@@ -210,7 +210,7 @@ mochaTest: {
 			reporter: 'spec',
 			captureFile: '${2:target/tests_results.txt}'
 		},
-		src: ['${3:test/**/*.js}']
+		src: ['${3:test/**/*.js}']${0:}
 	}
 }
 endsnippet
@@ -248,8 +248,33 @@ concat: {
 	},
 	${2:dist}: {
 		files : [
-			{ expand: true, cwd: '${3:src/}', src: ['${4:**}'], dest: '${5:dest/}' }${0:}
+			{ src: ['${3:**}'], dest: '${4:dest/output.js}' }${0:}
 		]
 	}
 }
+endsnippet
+
+#############################################################################
+# MkDir
+#############################################################################
+snippet plugmkdir "Add the Grunt MkDir NPM plugin."
+grunt.loadNpmTasks('grunt-mkdir');
+endsnippet
+
+snippet mkdirConfig "Add the mkdir configuration for the plugin"
+mkdir : {
+	${1:dist} : {
+		options: {
+			create: [ '${2:target/}' ]
+		}
+	}${0:}
+}
+endsnippet
+
+snippet mkdirTarget "Add the mkdir configuration target"
+${1:dist} : {
+	options: {
+		create: [ '${2:target/}' ]
+	}
+}${0:}
 endsnippet
