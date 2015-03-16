@@ -18,6 +18,12 @@ au BufRead,BufNewFile pom.xml set filetype=pom_xml.xml
 au BufRead,BufNewFile rebel.xml set filetype=rebel_xml.xml
 
 "
+" XSL mappings.
+"
+au BufRead,BufNewFile *.xsl set filetype=xml.xslt
+au BufRead,BufNewFile *.xslt set filetype=xml.xslt
+
+"
 " JavaScript file mappings.
 "
 au BufRead,BufNewFile Gruntfile.js set filetype=Gruntfile.javascript

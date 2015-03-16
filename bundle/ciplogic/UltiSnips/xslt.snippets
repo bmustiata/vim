@@ -7,3 +7,74 @@ snippet if-else "Adds an if else"
 	</xsl:otherwise>
 </xsl:choose>
 endsnippet
+
+snippet xsl_keep_structure "Adds a XSL that keeps the general structure of the input document"
+<?xml version="1.0" encoding="${1:UTF-8}"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+	<xsl:output method="${2:xml}" encoding="${3:utf-8}" indent="${4:yes}"/>
+
+	<xsl:template match="@*|node()">
+		<xsl:copy>
+			<xsl:apply-templates select="@*|node()"/>
+		</xsl:copy>
+	</xsl:template>
+
+	<xsl:template match="${5:input[@type='text']}">
+		${6:<xsl:value-of select="@value"/>}${0:}
+	</xsl:template>
+</xsl:stylesheet>
+endsnippet
+
+snippet xsl
+<?xml version="1.0" encoding="${1:UTF-8}"?>
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:output method="${2:xml}" encoding="${3:utf-8}" indent="${4:yes}"/>
+	${0:}
+</xsl:stylesheet>
+endsnippet
+
+snippet template
+<xsl:template match="${1:}">
+	${0:}
+</xsl:template>
+endsnippet
+
+snippet apply
+<xsl:apply-templates select="${1:.}"/>${0:}
+endsnippet
+
+snippet applytemplates
+<xsl:apply-templates select="${1:.}"/>${0:}
+endsnippet
+
+snippet apply-templates
+<xsl:apply-templates select="${1:.}"/>${0:}
+endsnippet
+
+snippet copyof
+<xsl:copy-of select="${1:.}"/>${0:}
+endsnippet
+
+snippet copy-of
+<xsl:copy-of select="${1:.}"/>${0:}
+endsnippet
+
+snippet valueof
+<xsl:value-of select="${1:.}"/>${0:}
+endsnippet
+
+snippet value-of
+<xsl:value-of select="${1:.}"/>${0:}
+endsnippet
+
+snippet text
+<xsl:text>${1:}</xsl:text>${0:}
+endsnippet
+
+snippet if
+<xsl:if test="${1:condition}">
+	${0:}
+</xsl:if>
+endsnippet
+
