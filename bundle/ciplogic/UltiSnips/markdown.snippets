@@ -58,3 +58,17 @@ snippet b "bold"
 **${1:text}**
 endsnippet
 
+#
+# Add an install section.
+#
+snippet install "Add an install section"
+## Install
+
+In order to install this run:
+
+\`\`\`sh
+npm install ${1:-g }${2:project}
+\`\`\`
+${0:}
+endsnippet
+

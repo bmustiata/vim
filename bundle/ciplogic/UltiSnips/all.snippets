@@ -1,0 +1,8 @@
+snippet date "Adds the current date."
+`!p
+import datetime
+
+now = datetime.date.today()
+snip.rv += "%04d-%02d-%02d" % (now.year, now.month, now.day)
+`
+endsnippet

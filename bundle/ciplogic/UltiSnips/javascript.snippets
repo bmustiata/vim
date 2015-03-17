@@ -205,3 +205,16 @@ endsnippet
 snippet log "Add a console.log"
 console.log(${0:});
 endsnippet
+
+snippet fori "for (i = ..; i < c.length; i++)"
+for (${1:var i} = 0; ${1/(.*\s)?(.*?)/$2/} < ${2:list}.length; ${1/(.*\s)?(.*?)/$2/}++) {
+	${0:}
+}
+endsnippet
+
+snippet /\.map/ "Map an array." r
+.map(function(${1:it}) {
+	${2:return ${3:}}
+})${0:}
+endsnippet
+
