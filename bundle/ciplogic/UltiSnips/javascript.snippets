@@ -212,6 +212,13 @@ for (${1:var i} = 0; ${1/(.*\s)?(.*?)/$2/} < ${2:list}.length; ${1/(.*\s)?(.*?)/
 }
 endsnippet
 
+snippet foria "for (i = ..; i < c.length; i++)"
+for (${1:var i} = 0; ${1/(.*\s)?(.*?)/$2/} < ${2:list}.length; ${1/(.*\s)?(.*?)/$2/}++) {
+	${3:var item} = $2[${1/(.*\s)?(.*?)/$2/}];
+	${0:}
+}
+endsnippet
+
 snippet /\.map/ "Map an array." r
 .map(function(${1:it}) {
 	${2:return ${3:}}
