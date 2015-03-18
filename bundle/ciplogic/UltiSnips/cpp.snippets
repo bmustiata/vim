@@ -25,3 +25,14 @@ snippet br "Create a big comment block to show a different section"
 //// ${1:}
 /////////////////////////////////////////////////////////////////////////////
 endsnippet
+
+snippet if "Add an if"
+if (${1:condition}) {
+	${0:}
+}
+endsnippet
+
+snippet #in "#include a header"
+#include "${1:stdio.h}"${0:}
+endsnippet
+
