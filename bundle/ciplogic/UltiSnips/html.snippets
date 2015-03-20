@@ -5,14 +5,14 @@ snippet html "Create a HTML page"
 		<title>${1:page}</title>
 	</head>
 	<body>
-		${0:}
+		${VISUAL}${0:}
 	</body>
 </html>
 endsnippet
 
 snippet form "Create a form"
 <form action="${1:url}" method="${2:post}">
-	${0:}
+	${VISUAL}${0:}
 </form>
 endsnippet
 
@@ -28,10 +28,16 @@ snippet css "Adds a CSS reference"
 <link rel="stylesheet" type="text/css" href="${1:theme.css}">${0:}
 endsnippet
 
-snippet < "create a tag"
-<${1:name}>
-	${0:}
-</${1/(.*?)\s.*/$1/}>
+snippet /<([^>]+)$/ "Create a tag" r
+<`!p snip.rv += match.group(1) `${1:}>
+	${VISUAL}${0:}
+</`!p snip.rv += match.group(1) `${1/(.*?)\s.*/$1/}>
+endsnippet
+
+snippet script "Create a JavaScript tag"
+<script type="text/javascript">
+${VISUAL}${0:}
+</script>
 endsnippet
 
 snippet livereload "Adds the live reload"
@@ -64,11 +70,10 @@ snippet livereload "Adds the live reload"
 	}, ${2:100});
 })();
 </script>
-
 endsnippet
 
 snippet /<?divc/ "Creates a div with a given class" r
 <div class="${1:css-class}">
-	${0:}
+	${VISUAL}${0:}
 </div>
 endsnippet

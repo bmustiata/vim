@@ -1,26 +1,24 @@
 snippet /cdata/ "Add a CDATA thingie" r
-<![CDATA[
-${0:}
-]]>
+<![CDATA[${VISUAL}${0:}]]>
 endsnippet
 
 snippet mn "Create a multi node."
 <${1:name}>
-	${0:}
+	${VISUAL}${0:}
 </${1/(.*?)\s.*/$1/}>
 endsnippet
 
 snippet n "Create a single node."
-<${1:name}>${0:}</${1/(.*?)\s.*/$1/}>
+<${1:name}>${VISUAL}${0:}</${1/(.*?)\s.*/$1/}>
 endsnippet
 
 snippet c "Create a comment."
-<!-- ${0:} -->
+<!-- ${VISUAL}${0:} -->
 endsnippet
 
 snippet mc "Create a multi line comment."
 <!--
-	${0:}
+	${VISUAL}${0:}
 -->
 endsnippet
 

@@ -2,13 +2,13 @@ extends json
 
 snippet /\.on/ "Create a JavaScript event handler" r
 .on(${1:"click"}, function(${2:ev}) {
-	${0:}
+	${VISUAL}${0:}
 }, this);
 endsnippet
 
 snippet /\.onb/ "Create a JavaScript event handler" r
 .on(${1:"click"}, bind(function(${2:ev}) {
-	${0:}
+	${VISUAL}${0:}
 }, this));
 endsnippet
 
@@ -23,7 +23,7 @@ for arg in re.split("\s*,\s*", t[2]):
 ` * @return {${4:void}}
  */
 function ${1:}(${2:}) {
-	${0:${VISUAL}}
+	${VISUAL}${0:}
 }
 endsnippet
 
@@ -43,7 +43,7 @@ indent = match.string[0: len(match.string) - len(match.group(1))]
 for arg in re.split("\s*,\s*", t[2]):
 	if arg != "":
 		snip.rv += '    this.%s = %s;\n%s' % (arg, arg, indent)
-`	${0:${VISUAL}}
+`	${VISUAL}${0:}
 }
 endsnippet
 
@@ -60,7 +60,7 @@ for arg in re.split("\s*,\s*", t[2]):
 ` * @return {${4:void}}
  */
 ${1:name} : function(${2:}) {
-	${0:}
+	${VISUAL}${0:}
 },
 endsnippet
 
@@ -68,7 +68,7 @@ endsnippet
 # Create an if statement, eventually also wrapping the selected code.
 snippet if "Create an if statement."
 if (${1:condition}) {`!p if t[2] : snip.rv = " // "`${2:}
-	${0:${VISUAL}}
+	${VISUAL}${0:}
 }
 endsnippet
 
@@ -84,7 +84,7 @@ for arg in re.split("\s*,\s*", t[2]):
 ` * @return {${4:void}}
  */
 `!p snip.rv = match.group(1)`.prototype.${1:name} = function(${2:}) {
-	${0:}
+	${VISUAL}${0:}
 }
 endsnippet
 
@@ -94,7 +94,7 @@ endsnippet
 
 snippet try "Add a try/catch statement"
 try {
-	${0:${VISUAL}}
+	${VISUAL}${0:}
 } catch (${1:e}) {
 	// FIXME: implement
 }
@@ -102,45 +102,39 @@ endsnippet
 
 snippet /\.then/ "Add a then statement" r
 .then(function(${1:data}) {
-	${0:}
+	${VISUAL}${0:}
 });
-endsnippet
-
-snippet bin "Add a bin entry"
-"bin": {
-	"${1:program}": "bin/$1.js"
-},
 endsnippet
 
 snippet jsscope "Create an anonyomous function for a JS scope"
 (function($) {
 
-${0:}
+${VISUAL}${0:}
 
 })(${1:jQuery});
 endsnippet
 
 snippet cclass "Create a ciplogic class"
 namespace("${1:namespace.name}").${2:ClassName} = createClass(${3:Object}, {
-	${0:}
+	${VISUAL}${0:}
 });
 endsnippet
 
 snippet /forEach/ "A forEach statement" r
 forEach(function(${1:it}) {
-	${0:}
+	${VISUAL}${0:}
 });
 endsnippet
 
 snippet /each/ "A forEach statement" r
 forEach(function(${1:it}) {
-	${0:}
+	${VISUAL}${0:}
 });
 endsnippet
 
 snippet /filter/ "A filter statement" r
 filter(function(${1:it}) {
-	${0:}
+	${VISUAL}${0:}
 })${2:}
 endsnippet
 
@@ -198,7 +192,7 @@ endsnippet
 
 snippet cs "Comment section"
 // ==========================================================================
-// ${0:}
+// ${VISUAL}${0:}
 // ==========================================================================
 endsnippet
 

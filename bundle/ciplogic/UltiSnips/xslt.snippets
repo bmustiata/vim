@@ -1,7 +1,7 @@
 snippet if-else "Adds an if else"
 <xsl:choose>
 	<xsl:when test="${1:condition}">
-		${0:}
+		${VISUAL}${0:}
 	</xsl:when>
 	<xsl:otherwise>
 	</xsl:otherwise>
@@ -10,7 +10,7 @@ endsnippet
 
 snippet xsl_keep_structure "Adds a XSL that keeps the general structure of the input document"
 <?xml version="1.0" encoding="${1:UTF-8}"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
 	<xsl:output method="${2:xml}" encoding="${3:utf-8}" indent="${4:yes}"/>
 
 	<xsl:template match="@*|node()">
@@ -69,12 +69,12 @@ snippet value-of
 endsnippet
 
 snippet text
-<xsl:text>${1:}</xsl:text>${0:}
+<xsl:text>${VISUAL}${1:}</xsl:text>${0:}
 endsnippet
 
 snippet if
 <xsl:if test="${1:condition}">
-	${0:}
+	${VISUAL}${0:}
 </xsl:if>
 endsnippet
 
