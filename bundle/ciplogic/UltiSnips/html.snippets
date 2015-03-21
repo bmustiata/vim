@@ -1,5 +1,5 @@
 snippet html "Create a HTML page"
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>${1:page}</title>
@@ -21,24 +21,23 @@ snippet inp "Add an input"
 endsnippet
 
 snippet srcscript "Adds a JS script reference."
-<script type="text/javascript" src="${0:}"></script>
+<script type="text/javascript" src="${1:}"></script>${0:}
 endsnippet
 
 snippet css "Adds a CSS reference"
 <link rel="stylesheet" type="text/css" href="${1:theme.css}">${0:}
 endsnippet
 
-snippet /<([^>]+)$/ "Create a tag" r
-<`!p snip.rv += match.group(1) `${1:}>
+snippet < "create a tag"
+<${1:name}>
 	${VISUAL}${0:}
-</`!p snip.rv += match.group(1) `${1/(.*?)\s.*/$1/}>
+</${1/(.*?)\s.*/$1/}>
 endsnippet
 
 snippet script "Create a JavaScript tag"
 <script type="text/javascript">
 ${VISUAL}${0:}
 </script>
-endsnippet
 
 snippet livereload "Adds the live reload"
 <script type="text/javascript">

@@ -3,13 +3,13 @@ extends json
 snippet /\.on/ "Create a JavaScript event handler" r
 .on(${1:"click"}, function(${2:ev}) {
 	${VISUAL}${0:}
-}, this);
+});
 endsnippet
 
 snippet /\.onb/ "Create a JavaScript event handler" r
-.on(${1:"click"}, bind(function(${2:ev}) {
+.on(${1:"click"}, function(${2:ev}) {
 	${VISUAL}${0:}
-}, this));
+}.bind(${3:this}));
 endsnippet
 
 snippet /(func?t?i?o?n?)/ "Create a JavaScript Function" r
@@ -219,3 +219,8 @@ snippet /\.map/ "Map an array." r
 })${0:}
 endsnippet
 
+snippet ready "Adds the jQuery document ready"
+$(document).ready(function() {
+	${VISUAL}${0:}
+});
+endsnippet
