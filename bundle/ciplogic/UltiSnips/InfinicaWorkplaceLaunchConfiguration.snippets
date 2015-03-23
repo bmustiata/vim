@@ -19,15 +19,19 @@ snippet launch-configuration "Create an HT Launch configuration."
 endsnippet
 
 snippet param "Create an HT Launch parameter."
-<!--
-	$1 - ${3:description}
--->
 <parameter>
-	<name>${1:name}</name>
-	<value>${2:%}</value>
-	<type>text/plain</type>
-</parameter>
-${0:}
+	<name>${1:name}</name>${2/.+/\<!-- /}${2:description}${2/.+/ -->/}
+	<value>${3:%}</value>
+	${4/.+/<type>/}${4:text/plain}${4/.+/<\/type>/}
+</parameter>${0:}
 endsnippet
 
-
+snippet parameters "Create a parameters definition."
+<parameters>
+	<parameter>
+		<name>${1:name}</name>${2/.+/\<!-- /}${2:description}${2/.+/ -->/}
+		<value>${3:%}</value>
+		${4/.+/<type>/}${4:text/plain}${4/.+/<\/type>/}
+	</parameter>${0:}
+</parameters>
+endsnippet
