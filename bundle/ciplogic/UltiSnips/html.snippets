@@ -28,10 +28,14 @@ snippet css "Adds a CSS reference"
 <link rel="stylesheet" type="text/css" href="${1:theme.css}">${0:}
 endsnippet
 
-snippet /<([^>]+)$/ "Create a tag" r
-<`!p snip.rv += match.group(1) `${1:}>
-	${VISUAL}${0:}
-</`!p snip.rv += match.group(1) `${1/(.*?)\s.*/$1/}>
+snippet /^(\s*)<([^>]+)$/ "Close a tag with or without attributes" r
+`!p snip.rv += match.group(1) `<`!p snip.rv += match.group(2) `>
+`!p snip.rv += match.group(1) `	${VISUAL}${0:}
+`!p snip.rv += match.group(1) `</`!p snip.rv += match.group(2).split(' ')[0] `>
+endsnippet
+
+snippet /^(\s*\S+\s*)<([^>]+)$/ "Close a tag with or without attributes" r
+`!p snip.rv += match.group(1) `<`!p snip.rv += match.group(2) `>${VISUAL}${0:}</`!p snip.rv += match.group(2).split(' ')[0] `>
 endsnippet
 
 snippet script "Create a JavaScript tag"
