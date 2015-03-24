@@ -17,3 +17,19 @@ snippet cs "Adds a comment section"
 #############################################################################
 endsnippet
 
+snippet prio "Adds a priority section."
+priority ${1:1}
+
+${VISUAL}${0:}
+
+priority ${2:0}
+endsnippet
+
+snippet wrapvar "Adds a wrapped variable." i
+\${$1/.+/${3:prefix}/}\${${1:1}:${2:originalValue}}\${$1/.+/${4:suffix}/}${0:}
+endsnippet
+
+snippet /matchval/ "Adds the value of a group match" r
+\`!p snip.rv += match.group(${1:1})\`${0:}
+endsnippet
+

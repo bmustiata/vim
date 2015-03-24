@@ -27,6 +27,20 @@ function ${1:}(${2:}) {
 }
 endsnippet
 
+#
+# If a function is a callback, it has priority over regular fully
+# documented functions.
+#
+priority 1
+
+snippet /^(.*?)\((.*)func?/ "Create a callback function, that is preceded by a (" r
+`!p snip.rv += match.group(1)`(`!p snip.rv += match.group(2)`function(${1:}) {
+	${VISUAL}${3:}
+}${2/.+/.bind(/}${2:this}${2/.+/)/}${0:}
+endsnippet
+
+priority 0
+
 snippet /(\W?class)/ "Create a JavaScript Class" r
 /**
  * $1 - ${3:}

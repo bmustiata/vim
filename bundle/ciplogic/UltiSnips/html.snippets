@@ -1,4 +1,4 @@
-snippet html "Create a HTML page"
+snippet /<?html/ "Create a HTML page" r
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,13 +10,13 @@ snippet html "Create a HTML page"
 </html>
 endsnippet
 
-snippet form "Create a form"
-<form action="${1:url}" method="${2:post}">
+snippet /<?form/ "Create a form" r
+<form ${1/.+/id="/}${1:formId}${1/.+/" /}action="${2:url}" method="${3:post}">
 	${VISUAL}${0:}
 </form>
 endsnippet
 
-snippet inp "Add an input"
+snippet /<?inp/ "Add an input" r
 <input name="${1:name}" type="${2:text}"/>
 endsnippet
 
@@ -28,46 +28,15 @@ snippet css "Adds a CSS reference"
 <link rel="stylesheet" type="text/css" href="${1:theme.css}">${0:}
 endsnippet
 
-snippet < "create a tag"
+snippet < "create a tag" b
 <${1:name}>
 	${VISUAL}${0:}
 </${1/(.*?)\s.*/$1/}>
 endsnippet
 
-snippet script "Create a JavaScript tag"
+snippet /<?script/ "Create a JavaScript tag" rb
 <script type="text/javascript">
 ${VISUAL}${0:}
-</script>
-
-snippet livereload "Adds the live reload"
-<script type="text/javascript">
-(function() {
-	// Make sure to remove this in production.
-	// include it above the </body> tag
-	// you need node-live-reload running on the given port.
-
-	var ws;
-
-	function socket() {
-		ws = new WebSocket("ws://127.0.0.1:${1:8084}");
-		ws.onmessage = function ( e ) {
-			var data = JSON.parse(e.data);
-			if ( data.r ) {
-				location.reload();
-			}
-		};
-	}
-
-	setInterval(function () {
-		if ( ws ) {
-			if ( ws.readyState !== 1 ) {
-				socket();
-			}
-		} else {
-			socket();
-		}
-	}, ${2:100});
-})();
 </script>
 endsnippet
 
@@ -76,3 +45,8 @@ snippet /<?divc/ "Creates a div with a given class" r
 	${VISUAL}${0:}
 </div>
 endsnippet
+
+snippet button "Create a button"
+<button${1/.+/ id="/}${1:buttonId}${1/.+/"/}${2/.+/ class="/}${2:button-class}${2/.+/"/}${3:}>${0:}</button>
+endsnippet
+
