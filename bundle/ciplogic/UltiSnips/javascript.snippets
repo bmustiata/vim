@@ -33,10 +33,10 @@ endsnippet
 #
 priority 1
 
-snippet /^(.*?)\((.*)func?/ "Create a callback function, that is preceded by a (" r
-`!p snip.rv += match.group(1)`(`!p snip.rv += match.group(2)`function(${1:}) {
-	${VISUAL}${3:}
-}${2/.+/.bind(/}${2:this}${2/.+/)/}${0:}
+snippet /^((\s*).*?)\((.*)func?/ "Create a callback function, that is preceded by a (" r
+`!p snip.rv += match.group(1)`(`!p snip.rv += match.group(3)`function(${1:ev}) {
+`!p snip.rv += match.group(2)`	${VISUAL}${0:}
+`!p snip.rv += match.group(2)`}${2/.+/.bind(/}${2:this}${2/.+/)/}${3:);}
 endsnippet
 
 priority 0
@@ -99,11 +99,11 @@ for arg in re.split("\s*,\s*", t[2]):
  */
 `!p snip.rv = match.group(1)`.prototype.${1:name} = function(${2:}) {
 	${VISUAL}${0:}
-}
+};
 endsnippet
 
 snippet this. "Assign a variable to this"
-this.${1:name} = $1;
+this._${1:name} = $1;${0:}
 endsnippet
 
 snippet try "Add a try/catch statement"

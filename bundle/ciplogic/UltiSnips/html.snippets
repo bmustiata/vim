@@ -1,4 +1,4 @@
-snippet /<?html/ "Create a HTML page" r
+snippet /<?html/ "Create a HTML page" rb
 <!DOCTYPE html>
 <html>
 	<head>
@@ -50,3 +50,6 @@ snippet button "Create a button"
 <button${1/.+/ id="/}${1:buttonId}${1/.+/"/}${2/.+/ class="/}${2:button-class}${2/.+/"/}${3:}>${0:}</button>
 endsnippet
 
+snippet /<?a/ "Create a link element." r
+<a href="${1:}"${2:}>${0:}</a>
+endsnippet

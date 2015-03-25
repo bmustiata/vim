@@ -1,0 +1,19 @@
+snippet processes "Creates a processes definition."
+<processes>
+	<processEngineUrl>${0:http://localhost:8080/infinica-process-engine/engine}</processEngineUrl>
+
+	<!-- available process definitions -->
+	${0:}
+</processes>
+endsnippet
+
+snippet process "Creates a single process definition for compare."
+<process name="${1:uniqueId}" label="${2:Process Description}" processFile="${3:process.ipd}">
+	${0:}
+</process>
+
+endsnippet
+
+snippet parameter "Add a parameter."
+<parameter name="${1:processParameterName}" label="${2:label}" type="path"/>
+endsnippet
