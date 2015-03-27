@@ -18,6 +18,18 @@ else # not [[ $1 ]]
 fi   # else [[ $1 ]]
 endsnippet
 
+snippet fun "Create a function"
+function ${1:name}() {
+	${0:}
+}
+endsnippet
+
+snippet for "Create a for loop"
+for ${1:f} in ${2:\`ls\`}; do
+	${0:}
+done
+endsnippet
+
 snippet add_jvm "Add a JVM into a ciplogic projects definition"
 add_jvm ${1:8} '${2:/full/path/to/java_home}' '$2/bin'${0:}
 endsnippet
