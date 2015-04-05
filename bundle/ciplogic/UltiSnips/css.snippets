@@ -1,6 +1,15 @@
-snippet media "description"
+snippet /@?media/ "add a media section for a device" r
 @media only screen and (max-device-width: ${1:960}px) {
-	${0:}
+	${VISUAL}${0:}
 }
 endsnippet
 
+snippet /^((\s*)([^\{\}]+))$/ "Autocomplete the brackets." r
+`!p
+snip.rv += match.group(1)
+if not match.group(1).endswith(" "):
+	snip.rv += " "
+`{
+`!p snip.rv += match.group(2)`	${VISUAL}${0:}
+`!p snip.rv += match.group(2)`}
+endsnippet
