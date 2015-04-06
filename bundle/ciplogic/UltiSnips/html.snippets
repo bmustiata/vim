@@ -1,3 +1,5 @@
+extends xml
+
 snippet /<?html/ "Create a HTML page" rb
 <!DOCTYPE html>
 <html>
@@ -28,22 +30,6 @@ snippet css "Adds a CSS reference"
 <link rel="stylesheet" type="text/css" href="${1:theme.css}">${0:}
 endsnippet
 
-snippet /<((\w+)\s?(.*))$/ "Add a general tag." r
-<`!p snip.rv += match.group(2)`${1:}>
-	${0:}
-</`!p snip.rv += match.group(2)`${1/^(.*?)\s(.*)/$1/}>
-endsnippet
-
-priority 1
-
-snippet < "create a tag"
-<${1:name}>
-	${VISUAL}${0:}
-</${1/(.*?)\s.*/$1/}>
-endsnippet
-
-priority 0
-
 snippet /<?script/ "Create a JavaScript tag" rb
 <script type="text/javascript">
 ${VISUAL}${0:}
@@ -56,7 +42,7 @@ snippet /<?divc/ "Creates a div with a given class" r
 </div>
 endsnippet
 
-snippet button "Create a button"
+snippet /button|btn/ "Create a button" r
 <button${1/.+/ id="/}${1:buttonId}${1/.+/"/}${2/.+/ class="/}${2:button-class}${2/.+/"/}${3:}>${0:}</button>
 endsnippet
 

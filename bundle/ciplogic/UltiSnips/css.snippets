@@ -1,8 +1,12 @@
+priority 1
+
 snippet /@?media/ "add a media section for a device" r
-@media only screen and (max-device-width: ${1:960}px) {
+@media only screen and (min-width: ${1:75em}) {
 	${VISUAL}${0:}
 }
 endsnippet
+
+priority 0
 
 snippet /^((\s*)([^\{\}]+))$/ "Autocomplete the brackets." r
 `!p

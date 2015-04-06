@@ -1,5 +1,7 @@
 extends css
 
+priority 2
+
 snippet /@?imp?/ "Adds a SCSS import." r
 @import "${1:compass}";${0:}
 endsnippet
@@ -23,3 +25,27 @@ endsnippet
 snippet /def(ault)?/ "Create a default variable definition." r
 $${1:variable-name} : ${2:default-value} !default;${0:}
 endsnippet
+
+priority 3
+
+snippet /@?mixdef/ "Adds a mixin definition with defaults" r
+`!p
+for arg in re.split("\s*,\s*", t[2]):
+	if arg != "":
+		tokens = re.split("\s*:\s*", arg)
+		if (len(tokens) > 1):
+			snip.rv += tokens[1] + ' : 0 !default;\n'
+`
+/**
+ * $1 - ${3:}
+`!p
+for arg in re.split("\s*,\s*", t[2]):
+	if arg != "":
+		snip.rv += ' * @param ' + arg + "\n"` */
+@mixin ${1:mixin-name}(${2:}) {
+	${VISUAL}${0:}
+}
+endsnippet
+
+priority 0
+
