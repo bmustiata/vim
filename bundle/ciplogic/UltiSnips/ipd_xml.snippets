@@ -2,3 +2,23 @@ snippet /<?connection/ "adds a connection" r
 <connection from="${1:}" to="${2:}"/>
 endsnippet
 
+snippet <parameterizedLiteralSource "Add a parametrizedLiteralSource"
+<parameterizedLiteralSource>${0:}</parameterizedLiteralSource>
+endsnippet
+
+snippet xpathFunctions "Adds an xpathFunction"
+<xpathFunctions namespace="${1:http://www.infinica.com/}">
+	<function name="${2:function-name}">
+		<parameter name="${3:param1}" />
+		<script language="JavaScript">
+		<![CDATA[
+			var result = "" + $2;
+
+			${0:}
+
+			result;
+		]]>
+		</script>
+	</function>
+</xpathFunctions>
+endsnippet

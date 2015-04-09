@@ -23,6 +23,8 @@ au BufRead,BufNewFile rebel.xml set filetype=rebel_xml.xml
 au BufRead,BufNewFile *.xsl set filetype=xml.xslt
 au BufRead,BufNewFile *.xslt set filetype=xml.xslt
 
+au BufRead,BufNewFile compare*.xml set filetype=compare_xml.xml
+
 "
 " JavaScript file mappings.
 "
