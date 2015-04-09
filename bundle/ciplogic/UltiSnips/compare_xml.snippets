@@ -1,0 +1,41 @@
+snippet compare "Add a compare.xml root node."
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="${1:CHART_DENSITY_THRESHOLD}">${2:2.5}</entry>${0:}
+</properties>
+endsnippet
+
+snippet logging "Add logging properties."
+<!-- ========================================================================
+	logging
+========================================================================= -->
+${1/.+/<entry key="CREATE_DIFFIMAGES">/}${1:false}${1/.+/<\/entry>/}
+${2/.+/<entry key="CREATE_ORIGIMAGES">/}${2:false}${2/.+/<\/entry>/}
+${3/.+/<entry key="CREATE_XORIMAGES">/}${3:false}${3/.+/<\/entry>/}
+${4/.+/<entry key="IMAGE_SCALE_FACTOR">/}${4:1}${4/.+/<\/entry>/}
+${5/.+/<entry key="LOG_FILE">/}${5:output.file.log}${5/.+/<\/entry>/}
+<!-- LOG_LEVEL: OFF/ERROR/WARN/INFO/ALL -->
+${6/.+/<entry key="LOG_LEVEL">/}${6:INFO}${6/.+/<\/entry>/}
+${7/.+/<entry key="MAX_ERRORS_PER_FILE">/}${7:100}${7/.+/<\/entry>/}
+${8/.+/<entry key="GENERATE_REPORT">/}${8:false}${8/.+/<\/entry>/}
+${9/.+/<entry key="EXPORT_PDF_ALWAYS">/}${9:false}${9/.+/<\/entry>/}
+endsnippet
+
+snippet mode_strict "Enable the strict mode comparison."
+<!-- strict mode comparison -->
+<entry key="CONTINOUS_COMPARE">false</entry>
+endsnippet
+
+snippet mode_strict "Enable the strict mode comparison."
+<!-- continous mode comparison, this is the default  -->
+<entry key="CONTINOUS_COMPARE">true</entry>
+endsnippet
+
+snippet mode "Set the mode for the comparison"
+${1/.+/<entry key="CONTINOUS_COMPARE">/}${1:true}${1/.+/<\/entry>/}
+endsnippet
+
+snippet strict_modules "Adds script modules support."
+<entry key="MODULES">${1/.+//}${1:MODULE_PAGEPROPERTIES}${1/.+/, /}${2/.+//}${2:MODULE_IMAGE}${2/.+/, /}${3/.+//}${3:MODULE_LINES}${3/.+/, /}${4/.+//}${4:MODULE_TEXT_WORDORDER}${4/.+//}</entry>
+endsnippet
