@@ -22,3 +22,20 @@ snippet mc "Create a multi line comment."
 -->
 endsnippet
 
+#############################################################################
+# A general tag section.
+#############################################################################
+priority -1
+
+snippet /<([^>]*)$/ "Create a tag" r
+<`!p snip.rv += match.group(1) `${1:}>
+	${VISUAL}${0:}
+</`!p
+start_tag_text = match.group(1) + t[1]
+snip.rv += re.split('\s+', start_tag_text)[0]
+`>
+endsnippet
+
+priority 0
+
+
