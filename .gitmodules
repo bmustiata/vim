@@ -64,3 +64,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = http://github.com/bmustiata/ultisnips
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim

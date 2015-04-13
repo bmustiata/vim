@@ -46,7 +46,7 @@ snippet /button|btn/ "Create a button" r
 <button${1/.+/ id="/}${1:buttonId}${1/.+/"/}${2/.+/ class="/}${2:button-class}${2/.+/"/}${3:}>${0:}</button>
 endsnippet
 
-snippet /<?a/ "Create a link element." r
-<a href="${1:}"${2:}>${VISUAL}${0:}</a>
+snippet /^(\s*)<?a/ "Create a link element." r
+`!p snip.rv += match.group(1)`<a href="${1:}"${2:}>${VISUAL}${0:}</a>
 endsnippet
 
