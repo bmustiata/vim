@@ -2,3 +2,74 @@ snippet from "Adds a from .. import"
 from ${1:name} import ${2:$1}
 endsnippet
 
+snippet unittest "Add a unittest"
+import unittest
+
+class ${1:TestClass}(unittest.TestCase):
+	"""
+	${3:}
+	"""
+	def test_${2:}(self):
+		"""
+		${4:}
+		"""
+		pass${0:}
+
+if __name__ == '__main__':
+	unittest.main()
+endsnippet
+
+snippet /^(\s*)def$/ "Define a method or function" r
+`!p snip.rv += match.group(1)`def ${1:name}(${2:self}):
+`!p snip.rv += match.group(1)`${3/.+/    """ /}${3:documentation}${3/.+/ """\n/}`!p snip.rv += match.group(1)`    ${0:pass}
+endsnippet
+
+snippet /^(\s*)sdef$/ "Define a static method" r
+`!p snip.rv += match.group(1)`@classmethod
+`!p snip.rv += match.group(1)`def ${1:name}(${2:self}):
+`!p snip.rv += match.group(1)`${3/.+/    """ /}${3:documentation}${3/.+/ """\n/}`!p snip.rv += match.group(1)`    ${0:pass}
+endsnippet
+
+snippet class "Create a new class."
+class ${1:ClassName}(${2:object}):
+	"""
+	${3:Class Documentation}
+	"""
+	def __init__(self${4:}):
+		${5:pass}
+endsnippet
+
+snippet c "Add a comment"
+${VISUAL/^(\s*)(.*?)$/$1/}#  ${VISUAL/^(\s*)(.*?)$/$2/}${0:}
+endsnippet
+
+snippet """ "Add a pydoc comment"
+"""
+${VISUAL}${0:}
+"""
+endsnippet
+
+snippet try "Add a try/except statement"
+try:
+	${VISUAL}${0:}
+except Exception as ${1:e}:
+	${2:pass}
+endsnippet
+
+snippet trye "Add a try/except/finally statement"
+try:
+	${VISUAL}${0:}
+except Exception as ${1:e}:
+	${2:pass}
+finally:
+	${3:pass}
+endsnippet
+
+snippet tryf "Add a try/finally statement"
+try:
+	${VISUAL}${0:}
+finally:
+	${1:pass}
+endsnippet
+
+
