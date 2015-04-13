@@ -22,20 +22,18 @@ ${8/.+/<entry key="GENERATE_REPORT">/}${8:false}${8/.+/<\/entry>/}
 ${9/.+/<entry key="EXPORT_PDF_ALWAYS">/}${9:false}${9/.+/<\/entry>/}
 endsnippet
 
-snippet mode_strict "Enable the strict mode comparison."
-<!-- strict mode comparison -->
-<entry key="CONTINOUS_COMPARE">false</entry>
-endsnippet
-
-snippet mode_strict "Enable the strict mode comparison."
-<!-- continous mode comparison, this is the default  -->
-<entry key="CONTINOUS_COMPARE">true</entry>
-endsnippet
-
 snippet mode "Set the mode for the comparison"
+`!p
+if t[1] == 'true':
+	snip.rv += "<!-- CONTINUOUS MODE comparison -->"
+else:
+	snip.rv += "<!-- STRICT MODE comparison -->"
+`
 ${1/.+/<entry key="CONTINOUS_COMPARE">/}${1:true}${1/.+/<\/entry>/}
 endsnippet
 
 snippet strict_modules "Adds script modules support."
 <entry key="MODULES">${1/.+//}${1:MODULE_PAGEPROPERTIES}${1/.+/, /}${2/.+//}${2:MODULE_IMAGE}${2/.+/, /}${3/.+//}${3:MODULE_LINES}${3/.+/, /}${4/.+//}${4:MODULE_TEXT_WORDORDER}${4/.+//}</entry>
 endsnippet
+
+
