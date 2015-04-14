@@ -30,9 +30,6 @@ set noswapfile
 :map <c-r>q :tabclose!<cr>
 :imap <c-r>q <esc>:tabclose!<cr>
 
-" show/hide the nerdtree
-:map <c-n> :NERDTreeToggle<cr>
-
 " rename the current tab.
 :map <c-r>r :TabooRename 
 :imap <c-r>r <esc>:TabooRename 
@@ -43,9 +40,6 @@ set noswapfile
 
 " a mustang2 slight variation
 :colorscheme ciplogic
-
-" nerdtree color fix
-:hi Directory guifg=#aaaaff
 
 " use the system clipboard
 :set clipboard=unnamedplus
