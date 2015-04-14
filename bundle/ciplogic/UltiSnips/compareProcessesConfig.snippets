@@ -1,4 +1,4 @@
-snippet processes "Creates a processes definition."
+snippet /<?processes\s*/ "Creates a processes definition." r
 <processes>
 	<processEngineUrl>${0:http://localhost:8080/infinica-process-engine/engine}</processEngineUrl>
 
@@ -7,13 +7,14 @@ snippet processes "Creates a processes definition."
 </processes>
 endsnippet
 
-snippet process "Creates a single process definition for compare."
+snippet /<?process\s*/ "Creates a single process definition for compare." r
 <process name="${1:uniqueId}" label="${2:Process Description}" processFile="${3:process.ipd}">
 	${0:}
 </process>
 
 endsnippet
 
-snippet parameter "Add a parameter."
-<parameter name="${1:processParameterName}" label="${2:label}" type="path"/>
+snippet /<?parameter\s*/ "Add a parameter." r
+<parameter name="${1:processParameterName}" label="${2:label}" type="${3:path}"${4/.+/ value="/}${4:val}${4/.+/"/}/>${0:}
 endsnippet
+

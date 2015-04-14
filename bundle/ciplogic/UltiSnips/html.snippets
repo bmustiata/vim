@@ -4,7 +4,8 @@ snippet /<?html/ "Create a HTML page" rb
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>${1:page}</title>
+		<meta charset="${1:UTF-8}">
+		<title>${2:page}</title>
 	</head>
 	<body>
 		${VISUAL}${0:}

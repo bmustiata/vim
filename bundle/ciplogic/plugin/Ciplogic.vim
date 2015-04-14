@@ -125,3 +125,9 @@ nmap <silent> <Up> gk
 "
 set listchars=tab:▸\ ,eol:¬
 nmap ,l :set list!<CR>
+
+"
+" Tail files with Shift-T
+"
+map T :edit!<CR>G
+"
