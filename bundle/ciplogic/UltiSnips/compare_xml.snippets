@@ -2,7 +2,7 @@ snippet compare "Add a compare.xml root node."
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-	<entry key="${1:CHART_DENSITY_THRESHOLD}">${2:2.5}</entry>${0:}
+	${0:}
 </properties>
 endsnippet
 
@@ -10,6 +10,7 @@ snippet logging "Add logging properties."
 <!-- ========================================================================
 	logging
 ========================================================================= -->
+<!-- CREATE_DIFFIMAGES: false/first/second/true -->
 ${1/.+/<entry key="CREATE_DIFFIMAGES">/}${1:false}${1/.+/<\/entry>/}
 ${2/.+/<entry key="CREATE_ORIGIMAGES">/}${2:false}${2/.+/<\/entry>/}
 ${3/.+/<entry key="CREATE_XORIMAGES">/}${3:false}${3/.+/<\/entry>/}
@@ -36,4 +37,53 @@ snippet strict_modules "Adds script modules support."
 <entry key="MODULES">${1/.+//}${1:MODULE_PAGEPROPERTIES}${1/.+/, /}${2/.+//}${2:MODULE_IMAGE}${2/.+/, /}${3/.+//}${3:MODULE_LINES}${3/.+/, /}${4/.+//}${4:MODULE_TEXT_WORDORDER}${4/.+//}</entry>
 endsnippet
 
+snippet strict_normalizers "Adds normalizers"
+<entry key="NORMALIZERS">${1/.+//}${1:NORMALIZER_CLIP}${1/.+/, /}${2/.+//}${2:NORMALIZER_MARGIN}${2/.+/, /}${3/.+//}${3:CHART_REMOVAL}${3/.+/, /}${4/.+//}${4:HEADER_FOOTER}${4/.+/, /}${5/.+//}${5:INVISIBLE_ELEMENTS}${5/.+/, /}${6/.+//}${6:REGEXP}${6/.+//}</entry>
+endsnippet
+
+snippet strict_normalizers2 "add strict2"
+<entry key="NORMALIZERS">${1:NORMALIZER_CLIP}${1/.+/, /}${2:NORMALIZER_MARGIN}${2/.+/, /}${3:CHART_REMOVAL}${3/.+/,/}${4/.+/prefix/}${4:originalValue}${4/.+/suffix/}
+endsnippet
+
+snippet module_pageproperties "Page properties settings"
+<!-- MODULE_PAGEPROPERTIES configuration -->
+${1/.+/<entry key="TOLERANCE_PAGE_LEFTCORNER">/}${1:3}${1/.+/<\/entry>/}
+${2/.+/<entry key="TOLERANCE_PAGE_RATIO">/}${2:0.1}${2/.+/<\/entry>/}
+${3/.+/<entry key="TOLERANCE_PAGE_SIZE">/}${3:2}${3/.+/<\/entry>/}
+endsnippet
+
+snippet module_image "Image settings"
+<!-- MODULE_IMAGE configuration -->
+${1/.+/<entry key="TOLERANCE_IMAGE_DISTANCE">/}${1:3}${1/.+/<\/entry>/}
+${2/.+/<entry key="TOLERANCE_IMAGE_PIXEL_VALUE">/}${2:0.05}${2/.+/<\/entry>/}
+${3/.+/<entry key="TOLERANCE_IMAGE_SIZE">/}${3:0.1}${3/.+/<\/entry>/}
+${4/.+/<entry key="USE_PIXEL_MEDIUM_VALUE">/}${4:true}${4/.+/<\/entry>/}
+endsnippet
+
+snippet module_lines "Lines settings"
+<!-- MODULE_LINES configuration -->
+${1/.+/<entry key="TOLERANCE_BOX_ROUND_EDGES">/}${1:3}${1/.+/<\/entry>/}
+${2/.+/<entry key="TOLERANCE_LINE_POSITION">/}${2:3}${2/.+/<\/entry>/}
+${3/.+/<entry key="TOLERANCE_LINE_SIZE">/}${3:2}${3/.+/<\/entry>/}
+${4/.+/<entry key="TOLERANCE_LINE_STYLE">/}${4:false}${4/.+/<\/entry>/}
+${5/.+/<entry key="TOLERANCE_LINE_THICKNESS">/}${5:1}${5/.+/<\/entry>/}
+${6/.+/<entry key="TOLERANCE_UNDERLINE_LENGTH">/}${6:0.1}${6/.+/<\/entry>/}
+${7/.+/<entry key="TOLERANCE_COLOR">/}${7:0.01}${7/.+/<\/entry>/}
+endsnippet
+
+snippet module_text_wordorder "Text Word Order settings"
+<!-- MODULE_WORD_ORDER configuration -->
+${1/.+/<entry key="TOLERANCE_TEXT_LOCATION">/}${1:-1}${1/.+/<\/entry>/}
+${2/.+/<entry key="TEXT_ALIGN_RATIO">/}${2:0.15}${2/.+/<\/entry>/}
+${3/.+/<entry key="COMPARE_TEXT_STYLES">/}${3:true}${3/.+/<\/entry>/}
+${4/.+/<entry key="TOLERANCE_TEXT_SIZE">/}${4:0.05}${4/.+/<\/entry>/}
+${5/.+/<entry key="TOLERANCE_COLOR">/}${5:0.01}${5/.+/<\/entry>/}
+endsnippet
+
+snippet chart_removal "Chart removal configuration"
+<!-- CHART_REMOVAL configuration -->
+${1/.+/<entry key="CHART_DENSITY_THRESHOLD">/}${1:0.0}${1/.+/<\/entry>/}
+${2/.+/<entry key="CHART_REMOVAL_MARGIN">/}${2:0}${2/.+/<\/entry>/}
+${3/.+/<entry key="CHART_REMOVAL_MOD">/}${3:CHART_REMOVAL_AUTO}${3/.+/<\/entry>/}
+endsnippet
 
