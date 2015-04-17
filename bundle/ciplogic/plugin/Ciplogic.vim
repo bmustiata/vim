@@ -117,7 +117,7 @@ nmap <silent> <Up> gk
 "
 " Show invisible characters.
 "
-set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,eol:¬
 nmap ,l :set list!<CR>
 
 "
