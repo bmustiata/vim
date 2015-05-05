@@ -75,7 +75,7 @@ for arg in re.split("\s*,\s*", t[2]):
  */
 ${1:name} : function(${2:}) {
 	${VISUAL}${0:}
-},
+}${5:,}
 endsnippet
 
 #
@@ -216,14 +216,21 @@ endsnippet
 
 snippet fori "for (i = ..; i < c.length; i++)"
 for (${1:var i} = 0; ${1/(.*\s)?(.*?)/$2/} < ${2:list}.length; ${1/(.*\s)?(.*?)/$2/}++) {
-	${0:}
+	${VISUAL}${0:}
 }
 endsnippet
 
 snippet foria "for (i = ..; i < c.length; i++)"
 for (${1:var i} = 0; ${1/(.*\s)?(.*?)/$2/} < ${2:list}.length; ${1/(.*\s)?(.*?)/$2/}++) {
 	${3:var item} = $2[${1/(.*\s)?(.*?)/$2/}];
-	${0:}
+	${VISUAL}${0:}
+}
+endsnippet
+
+snippet foriar "for i reversed"
+for (${1:var i} = ${2:list}.length - 1; ${1/(.*\s)?(.*?)/$2/} >= 0; ${1/(.*\s)?(.*?)/$2/}--) {
+	${3:var item} = $2[${1/(.*\s)?(.*?)/$2/}];
+	${VISUAL}${0:}
 }
 endsnippet
 

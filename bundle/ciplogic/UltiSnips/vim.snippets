@@ -38,25 +38,25 @@ endsnippet
 
 snippet while "Create a while statement"
 while ${1:condition}
-	${2:}
+	${0:}
 endwhile
 endsnippet
 
 snippet fori "Create a for statement"
 for ${1:i} in range(1, ${2:target})
-	${3:}
+	${0:}
 endfor
 endsnippet
 
 snippet if "Create an if statement"
 if ${1:condition}
-	${2:}
+	${0:}
 endif
 endsnippet
 
 snippet ifelse "Create an if/else statement"
 if ${1:condition}
-	${2:}
+	${VISUAL}${0:}
 else
 
 endif
@@ -64,7 +64,7 @@ endsnippet
 
 snippet elif "Create an elseif statement"
 elseif ${1:condition}
-	${2:}
+	${VISUAL}${0:}
 endsnippet
 
 snippet py "Create a python block"
@@ -75,7 +75,7 @@ endsnippet
 
 snippet fun "Create a function"
 function! ${1:Name}()
-	${2:}
+	${VISUAL}${0:}
 endfunction
 endsnippet
 

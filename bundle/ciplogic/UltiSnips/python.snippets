@@ -72,4 +72,13 @@ finally:
 	${1:pass}
 endsnippet
 
+snippet trygermanium "Add a germanium try/except/finally block"
+try:
+	${VISUAL}${0:}
+except Exception as e:
+	print("test failed: " + str(e))
+	germanium.take_screenshot("WpTestLogin")
+finally:
+	germanium.quit()
+endsnippet
 
