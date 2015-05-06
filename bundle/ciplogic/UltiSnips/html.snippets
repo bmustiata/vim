@@ -13,6 +13,42 @@ snippet /<?html/ "Create a HTML page" rb
 </html>
 endsnippet
 
+snippet /<?html_mocha/ "Create a Mocha Test HTML page" rb
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="${1:UTF-8}">
+		<title>${2:Mocha Test}</title>
+		<link rel="stylesheet" type="text/css" href="${3/^(.*\/)?.+?$/$1/}mocha.css">
+	</head>
+	<body>
+		<div id="mocha"></div>
+
+		<!--
+			Mocha and external frameworks setup.
+		-->
+		<script type="text/javascript" src="${3:mocha.js}"></script>
+		<script type="text/javascript">
+			mocha.setup('${4:bdd}');
+		</script>
+
+		<!--
+			Actual tests.
+		-->
+		<script type="text/javascript" src="${5:node/DomUtilTest.js}"></script>
+		${0:}
+
+		<!--
+			Run 'em.
+		-->
+		<script type="text/javascript">
+			mocha.checkLeaks();
+			mocha.run();
+		</script>
+	</body>
+</html>
+endsnippet
+
 snippet /<?form/ "Create a form" r
 <form ${1/.+/id="/}${1:formId}${1/.+/" /}action="${2:url}" method="${3:post}">
 	${VISUAL}${0:}
