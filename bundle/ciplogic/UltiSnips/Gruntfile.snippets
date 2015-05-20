@@ -254,7 +254,10 @@ concat: {
 	},
 	${2:dist}: {
 		files : [
-			{ src: ['${3:**}'], dest: '${4:dest/output.js}' }${0:}
+			src: [
+				"${3:src/main.js}"
+			],
+			dest: "${4:target/out.js}"${0:}
 		]
 	}
 }
