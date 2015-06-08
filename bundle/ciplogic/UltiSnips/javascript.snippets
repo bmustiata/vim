@@ -149,12 +149,6 @@ ${VISUAL}${0:}
 })(${1:jQuery});
 endsnippet
 
-snippet cclass "Create a ciplogic class"
-namespace("${1:namespace.name}").${2:ClassName} = createClass(${3:Object}, {
-	${VISUAL}${0:}
-});
-endsnippet
-
 snippet /forEach/ "A forEach statement" r
 forEach(function(${1:it}) {
 	${VISUAL}${0:}
@@ -251,6 +245,12 @@ endsnippet
 snippet foriar "for i reversed"
 for (${1:var i} = ${2:list}.length - 1; ${1/(.*\s)?(.*?)/$2/} >= 0; ${1/(.*\s)?(.*?)/$2/}--) {
 	${3:var item} = $2[${1/(.*\s)?(.*?)/$2/}];
+	${VISUAL}${0:}
+}
+endsnippet
+
+snippet fork "for (k in ..)"
+for (${1:var k} in ${2:item}) {
 	${VISUAL}${0:}
 }
 endsnippet
