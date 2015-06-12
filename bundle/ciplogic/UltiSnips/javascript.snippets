@@ -229,6 +229,10 @@ snippet log "Add a console.log"
 console.log(${VISUAL}${0:});
 endsnippet
 
+snippet err "Add a console.error"
+console.error(${VISUAL}${0:});
+endsnippet
+
 snippet fori "for (i = ..; i < c.length; i++)"
 for (${1:var i} = 0; ${1/(.*\s)?(.*?)/$2/} < ${2:list}.length; ${1/(.*\s)?(.*?)/$2/}++) {
 	${VISUAL}${0:}
@@ -251,6 +255,13 @@ endsnippet
 
 snippet fork "for (k in ..)"
 for (${1:var k} in ${2:item}) {
+	${VISUAL}${0:}
+}
+endsnippet
+
+snippet forka "for (k in ..) // assigned"
+for (var ${1:k} in ${2:item}) {
+	var ${3:value} = $2[$1];
 	${VISUAL}${0:}
 }
 endsnippet
