@@ -20,3 +20,40 @@ snippet s, "Add a string followed by a comma."
 "${1:}",
 ${0:}
 endsnippet
+
+snippet workplace_module "Adds a workplace module"
+{
+	"name" : "${1:module-name}",
+	"builds" : {
+		"$1" : {
+			"jsfiles" : [
+				"${2:js-file.js}"
+			],
+			"servicefiles" : [
+				"${3:service.js}"
+			],
+			"config" : {
+				"requires" : [
+					"htio",
+					"notifier",
+					"json-parse",
+					"datatype-xml",
+					"spring-config",
+					"request-parameters",
+					"workflow-navigation",
+					"workflow"
+				],
+				"servicerequires" : [
+					"layout-workflow",
+					"workflow",
+					"pipeline",
+					"request-parameters",
+					"workflow-navigation",
+					"htio"
+				],
+				"lang" : ["de"]
+			}
+		}
+	}
+}
+endsnippet

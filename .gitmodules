@@ -67,3 +67,6 @@
 [submodule "bundle/emmet-vim"]
 	path = bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim
+[submodule "bundle/vim-cucumber"]
+	path = bundle/vim-cucumber
+	url = https://github.com/bmustiata/vim-cucumber
