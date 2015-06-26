@@ -17,6 +17,7 @@ au BufRead,BufNewFile compare*.xml set filetype=compare_xml.xml
 "
 function! JsDefaults()
     au BufRead,BufNewFile Gruntfile.js set filetype=Gruntfile.javascript
+    au BufRead,BufNewFile gulpfile.js set filetype=gulpfile.javascript
     au BufRead,BufNewFile *.json set filetype=json.javascript
     au BufRead,BufNewFile package.json set filetype=package_json.json.javascript
     au BufRead,BufNewFile *test.js set filetype=mocha_test.javascript

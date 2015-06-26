@@ -1,0 +1,36 @@
+priority 1
+
+snippet gulp "Adds a default gulp config"
+var gulp = require('gulp');
+
+gulp.task('default', function() {
+	${0:}
+});
+endsnippet
+
+snippet task "Add a regular src/dest task"
+gulp.src('${1:target/*}')
+	.pipe(${0:});
+endsnippet
+
+snippet taskdel "Add a task to delete"
+gulp.task('${1:clean}', function(cb) {
+	del([
+		'${2:target/}'${0:}
+	], cb);
+});
+endsnippet
+
+snippet tasklist "Add a task composed from other tasks"
+gulp.task('${1:default}', ['${2:clean}'${0:}]);
+endsnippet
+
+snippet plugdel "Plug in the del module"
+${1:del} = require('del');
+endsnippet
+
+snippet plugvinyl "Plug in the vinyl paths."
+${1:vinylPaths} = require('vinyl-paths');
+endsnippet
+
+priority 0
