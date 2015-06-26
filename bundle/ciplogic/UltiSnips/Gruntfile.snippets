@@ -195,11 +195,21 @@ endsnippet
 # TypeScript
 #############################################################################
 snippet plugtsc "Adds the TypeScript Grunt NPM Plugin"
-grunt.loadNpmTasks('grunt-tsc');${0:}
+grunt.loadNpmTasks('grunt-typescript');${0:}
 endsnippet
 
 snippet tscConfig "Adds a TypeScript configuration."
-
+typescript: {
+	"${1:dist}" : {
+		files: [{
+			dest: "${2:target/out.js}",
+			src: [
+				"${3:src/main/core/**/*}.ts",
+				"$3.d.ts"
+			]
+		}]
+	}
+}
 endsnippet
 
 #############################################################################
