@@ -54,6 +54,24 @@ for arg in re.split("\s*,\s*", t[2]):
 `!p snip.rv += indent`}${1/.+/.bind(/}${1:this}${1/.+/)/};
 endsnippet
 
+snippet /^(\s*)((\w+)(\s*))\:(.*)func?/ "Create a method, that is preceded by a :" r
+`!p
+indent = match.group(1)
+
+snip.rv += indent + "/**\n"
+snip.rv += indent + " * " + match.group(3)` - ${3:}
+`!p
+for arg in re.split("\s*,\s*", t[2]):
+	if arg != "":
+		snip.rv += indent + ' * @param {} ' + arg + "\n"
+snip.rv += indent
+` * @return {${4:void}}
+`!p snip.rv += indent ` */
+`!p snip.rv += indent + match.group(2)`:`!p snip.rv += match.group(4)`function(${2:}) {
+`!p snip.rv += indent`	${VISUAL}${0:}
+`!p snip.rv += indent`}${5:,}
+endsnippet
+
 priority 0
 
 snippet /(\W?class)/ "Create a JavaScript Class" r
