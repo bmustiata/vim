@@ -21,6 +21,16 @@ snippet s, "Add a string followed by a comma."
 ${0:}
 endsnippet
 
+snippet tsconfig "Add a tsconfig"
+{
+	"compilerOptions": {
+		${1/.+/"target": "/}${1:ES3}${1/.+/",/}
+		${2/.+/"module": "/}${2:commonjs}${2/.+/",/}
+		${3/.+/"sourceMap": "/}${3:true}${3/.+/",/}
+	}
+}
+endsnippet
+
 snippet workplace_module "Adds a workplace module"
 {
 	"name" : "${1:module-name}",
