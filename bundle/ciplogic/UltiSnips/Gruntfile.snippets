@@ -201,11 +201,16 @@ endsnippet
 snippet tscConfig "Adds a TypeScript configuration."
 typescript: {
 	"${1:dist}" : {
+		options: {
+			${2/.+/module : '/}${2:commonjs}${2/.+/',/}
+			${3/.+/sourceMap: /}${3:true}${3/.+/,/}
+			${4/.+/declaration: /}${4:true}${4/.+/,/}
+		},
 		files: [{
-			dest: "${2:target/out.js}",
+			dest: "${5:target/out.js}",
 			src: [
-				"${3:src/main/core/**/*}.ts",
-				"$3.d.ts"
+				"${6:src/main/core/**/*}.ts",
+				"$6.d.ts"
 			]
 		}]
 	}
