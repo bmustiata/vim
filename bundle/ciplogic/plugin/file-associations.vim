@@ -22,6 +22,7 @@ function! JsDefaults()
     au BufRead,BufNewFile package.json set filetype=package_json.json.javascript
     au BufRead,BufNewFile *test.js set filetype=mocha_test.javascript
     au BufRead,BufNewFile *Test.js set filetype=mocha_test.javascript
+    au BufRead,BufNewFile tsconfig.json set filetype=tsconfig.json.javascript
 endfunction
 call JsDefaults()
 

@@ -178,6 +178,12 @@ snippet /\.then/ "Add a then statement" r
 });
 endsnippet
 
+snippet /\.catch/ "Add a catch statement" r
+.catch(${1:e}) {
+	${VISUAL}${0:}
+});
+endsnippet
+
 snippet jsscope "Create an anonyomous function for a JS scope"
 (function($) {
 
@@ -286,7 +292,7 @@ $(document).ready(function() {
 endsnippet
 
 snippet Promise "create a new Promise"
-Promise(function(fulfill, reject) {
+Promise(function(resolve, reject) {
 	${VISUAL}${0:}
 });
 endsnippet
