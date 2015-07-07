@@ -1,5 +1,9 @@
 extends json
 
+snippet node "Adds the node launcher"
+#!/usr/bin/env node
+endsnippet
+
 snippet /\.on/ "Create a JavaScript event handler" r
 .on(${1:"click"}, function(${2:ev}) {
 	${VISUAL}${0:}
@@ -199,36 +203,6 @@ filter(function(${1:it}) {
 	${VISUAL}${0:}
 })${2:}
 endsnippet
-
-snippet livereload "Creates the live reload necessary code."
-(function() {
-
-var ws;
-
-// you need node-live-reload running on the given port.
-function socket() {
-	ws = new WebSocket("ws://127.0.0.1:${1:8084}");
-	ws.onmessage = function ( e ) {
-		var data = JSON.parse(e.data);
-		if ( data.r ) {
-			location.reload();
-		}
-	};
-}
-
-setInterval(function () {
-	if ( ws ) {
-		if ( ws.readyState !== 1 ) {
-			socket();
-		}
-	} else {
-		socket();
-	}
-}, ${2:100});
-
-})();
-endsnippet
-
 
 snippet req "Require a module."
 require("$1")${0:}
