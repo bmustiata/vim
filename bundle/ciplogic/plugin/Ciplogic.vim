@@ -106,10 +106,6 @@ if has("gui_running")
     set lines=999 columns=999
 endif
 
-" Command for pretty format XMLs and JSON
-command PrettyXml execute "%!XMLLINT_INDENT='    ' xmllint --format -"
-command PrettyJson execute "%!python -m json.tool"
-
 " Allow navigating inside wrapped lines
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
@@ -126,3 +122,7 @@ nmap ,l :set list!<CR>
 map T :edit!<CR>G
 "
 
+"
+" json
+"
+let g:vim_json_syntax_conceal = 0
