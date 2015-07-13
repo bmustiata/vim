@@ -73,18 +73,12 @@
 [submodule "bundle/vim-json"]
 	path = bundle/vim-json
 	url = https://github.com/elzr/vim-json
-[submodule "bundle/vimple"]
-	path = bundle/vimple
-	url = https://github.com/dahu/vimple
-[submodule "bundle/Asif"]
-	path = bundle/Asif
-	url = https://github.com/dahu/Asif
 [submodule "bundle/SyntaxRange"]
 	path = bundle/SyntaxRange
 	url = https://github.com/vim-scripts/SyntaxRange
-[submodule "bundle/vim-asciidoc"]
-	path = bundle/vim-asciidoc
-	url = https://github.com/dahu/vim-asciidoc
 [submodule "bundle/ingo-library"]
 	path = bundle/ingo-library
 	url = https://github.com/vim-scripts/ingo-library
+[submodule "bundle/asciidoc-vim"]
+	path = bundle/asciidoc-vim
+	url = https://github.com/dagwieers/asciidoc-vim
