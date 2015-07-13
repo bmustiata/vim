@@ -46,6 +46,12 @@ command JsVanilla call JsVanilla()
 au BufRead,BufNewFile LICENSE set filetype=license_txt
 
 "
+" Asciidoc
+"
+au BufRead,BufNewFile *.adoc set filetype=asciidoc
+au BufRead,BufNewFile *.ad set filetype=asciidoc
+
+"
 " Associate Infinica files with XML
 au BufRead,BufNewFile *.ipd set filetype=ipd_xml.xml
 au BufRead,BufNewFile *.itx set filetype=itx_xml.xml
