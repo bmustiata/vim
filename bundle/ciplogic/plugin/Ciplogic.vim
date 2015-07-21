@@ -103,7 +103,7 @@ let g:splice_initial_scrollbind_path=1
 "
 if has("gui_running")
     " GUI is running or is about to start (maximize window)
-    set lines=999 columns=999
+    set lines=58 columns=237
 endif
 
 " Allow navigating inside wrapped lines
