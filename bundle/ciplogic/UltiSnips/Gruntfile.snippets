@@ -12,10 +12,10 @@ module.exports = function(grunt) {
 	});
 
 	// load NPM tasks:
-	// grunt.loadNpmTasks('grunt-contrib-watch');
+	// grunt.loadNpmTasks("grunt-contrib-watch");
 
 	// register our tasks:
-	grunt.registerTask('default', []);
+	grunt.registerTask("default", []);
 };
 endsnippet
 
@@ -24,7 +24,7 @@ snippet grunt_load "Adds a default empty grunt configuration, loading plugins au
  * Grunt project configuration.
  */
 module.exports = function(grunt) {
-	require('load-grunt-tasks')(grunt);
+	require("load-grunt-tasks")(grunt);
 
 	// configuration for the plugins.
 	grunt.initConfig({
@@ -32,39 +32,53 @@ module.exports = function(grunt) {
 	});
 
 	// register our tasks:
-	grunt.registerTask('default', []);
+	grunt.registerTask("default", []);
 };
 endsnippet
 
 snippet load-grunt-tasks "Loads the grunt tasks using load-grunt-tasks"
-require('load-grunt-tasks')(grunt);${0:}
+require("load-grunt-tasks")(grunt);${0:}
 endsnippet
 
 #############################################################################
 # Generic Plugins
 #############################################################################
 snippet plug "Add a Grunt NPM plugin"
-grunt.loadNpmTasks('${1:grunt-contrib-clean}');${0:}
+grunt.loadNpmTasks("${1:grunt-contrib-clean}");${0:}
 endsnippet
 
 snippet config "Adds a config part"
 ${1:pluginName} : {
-	${2:dist} : {
+	"${2:dist}" : {
 		files : [
-			{ expand: true, cwd: '${3:src/}', src: ['${4:**}'], dest: '${5:dest/}' }${0:}
+			{
+				expand: true,
+				cwd: "${3:src/}",
+				src: [
+					"${5:**}"${0:}
+				],
+				dest: "${4:dest/}"
+			}
 		]
 	}
 }
 endsnippet
 
 snippet file "Adds a files slector for grunt."
-{ expand: true, cwd: '${1:src/}', src: ['${2:**}'], dest: '${3:dest/}' }${0:}
+{
+	expand: true,
+	cwd: "${1:src/}",
+	src: [
+		"${3:**}"${0:}
+	],
+	dest: "${2:dest/}"
+}
 endsnippet
 
 snippet target "Adds another target for a config task"
 ${1:dist} : {
 	files: [
-		{ expand: true, cwd: '${2:src/}', src: ['${3:**}'], dest: '${4:dest/}' }${0:}
+		{ expand: true, cwd: "${2:src/}", src: ["${3:**}"], dest: "${4:dest/}" }${0:}
 	]
 }
 endsnippet
@@ -73,17 +87,17 @@ endsnippet
 # Compass Support
 #############################################################################
 snippet plugcompass "Add compass Grunt NPM tasks"
-grunt.loadNpmTasks('grunt-contrib-compass');${0:}
+grunt.loadNpmTasks("grunt-contrib-compass");${0:}
 endsnippet
 
 snippet compassConfig "Adds the compass config for the plugin"
 compass: {
 	${1:dist} : {
 		options: {
-			sassDir: '${2:scss}',
-			cssDir: '${3:css}',
+			sassDir: "${2:scss}",
+			cssDir: "${3:css}",
 			sourcemap: true
-			// environment: 'production'
+			// environment: "production"
 		}
 	}
 }
@@ -93,14 +107,14 @@ endsnippet
 # Copy Support
 #############################################################################
 snippet plugcopy "Add copy Grunt NPM plugin"
-grunt.loadNpmTasks('grunt-contrib-copy');${0:}
+grunt.loadNpmTasks("grunt-contrib-copy");${0:}
 endsnippet
 
 snippet copyConfig "Adds the copy config for the plugin."
 copy: {
 	${1:dist} : {
 		files: [
-			{ expand: true, cwd: '${2:src/}', src: ['${3:**}'], dest: '${4:dest/}' }${0:}
+			{ expand: true, cwd: "${2:src/}", src: ["${3:**}"], dest: "${4:dest/}" }${0:}
 		]
 	}
 }
@@ -110,7 +124,7 @@ endsnippet
 # Clean Support
 #############################################################################
 snippet plugclean "Add clean Grunt NPM plugin"
-grunt.loadNpmTasks('grunt-contrib-clean');${0:}
+grunt.loadNpmTasks("grunt-contrib-clean");${0:}
 endsnippet
 
 snippet cleanConfig "Adds the clean config for the plugin."
@@ -131,22 +145,22 @@ endsnippet
 # Watch Support
 #############################################################################
 snippet plugwatch "Add watch Grunt NPM plugin"
-grunt.loadNpmTasks('grunt-contrib-watch');${0:}
+grunt.loadNpmTasks("grunt-contrib-watch");${0:}
 endsnippet
 
 snippet watchConfig "Adds a watch config for the plugin."
 watch : {
 	${1:dist} : {
-		files: [ ${2:'src/*'} ],
-		tasks: [ ${3:'default'} ]
+		files: [ ${2:"src/*"} ],
+		tasks: [ ${3:"default"} ]
 	}${0:}
 }
 endsnippet
 
 snippet watchTarget "Adds a watch target for the plugin."
 ${1:dist} : {
-	files: [ ${2:'src/*'} ],
-	tasks: [ ${3:'default'} ]
+	files: [ ${2:"src/*"} ],
+	tasks: [ ${3:"default"} ]
 }${0:}
 endsnippet
 
@@ -154,14 +168,14 @@ endsnippet
 # ES6 Transpiler
 #############################################################################
 snippet pluges6stranspiler "Add ES6 Transpiler Grunt NPM plugin"
-grunt.loadNpmTasks('grunt-es6-transpiler');${0:}
+grunt.loadNpmTasks("grunt-es6-transpiler");${0:}
 endsnippet
 
 snippet es6transpilerConfig "Adds the ES6 transpiler plugin configuration"
 es6transpiler: {
 	${1:dist}: {
 		files : [
-			{ expand: true, cwd: '${2:src/}', src: ['${3:*.js}'], dest: '${4:dest/}' }
+			{ expand: true, cwd: "${2:src/}", src: ["${3:*.js}"], dest: "${4:dest/}" }
 		]
 	}${0:}
 }
@@ -171,7 +185,7 @@ endsnippet
 # ES6 Tracer (google) Transpiler
 #############################################################################
 snippet pluges6traceur "Add ES6 Traceur Grunt NPM Plugin"
-grunt.loadNpmTasks('grunt-traceur');${0:}
+grunt.loadNpmTasks("grunt-traceur");${0:}
 endsnippet
 
 snippet es6traceurConfig "Adds a traceur configuration for the plugin."
@@ -181,11 +195,11 @@ traceur : {
 			stripPrefix: "$3",
 			addPrefix: "${6:}"
 		},
-		copyRuntime: '${5:$4}'
+		copyRuntime: "${5:$4}"
 	},
 	${1:dist} : {
 		files : [
-			{ expand: true, cwd: '${2:src/}', src: ['${3:**}'], dest: '${4:dest/}' }${0:}
+			{ expand: true, cwd: "${2:src/}", src: ["${3:**}"], dest: "${4:dest/}" }${0:}
 		]
 	}
 }
@@ -195,14 +209,14 @@ endsnippet
 # TypeScript
 #############################################################################
 snippet plugtsc "Adds the TypeScript Grunt NPM Plugin"
-grunt.loadNpmTasks('grunt-typescript');${0:}
+grunt.loadNpmTasks("grunt-typescript");${0:}
 endsnippet
 
 snippet tscConfig "Adds a TypeScript configuration."
 typescript: {
 	"${1:dist}" : {
 		options: {
-			${2/.+/module : '/}${2:commonjs}${2/.+/',/}
+			${2/.+/module : "/}${2:commonjs}${2/.+/",/}
 			${3/.+/sourceMap: /}${3:true}${3/.+/,/}
 			${4/.+/declaration: /}${4:true}${4/.+/,/}
 		},
@@ -221,17 +235,17 @@ endsnippet
 # Mocha
 #############################################################################
 snippet plugmocha "Adds the Mocha Grunt NPM plugin."
-grunt.loadNpmTasks('grunt-mocha-test');
+grunt.loadNpmTasks("grunt-mocha-test");
 endsnippet
 
 snippet mochaTestConfig "Adds a mochaTest configuration for the plugin."
 mochaTest: {
 	${1:test}: {
 		options: {
-			reporter: 'spec',
-			captureFile: '${2:target/tests_results.txt}'
+			reporter: "spec",
+			captureFile: "${2:target/tests_results.txt}"
 		},
-		src: ['${3:test/**/*.js}']${0:}
+		src: ["${3:test/**/*.js}"]${0:}
 	}
 }
 endsnippet
@@ -240,7 +254,7 @@ endsnippet
 # Grunt-Sync
 #############################################################################
 snippet plugsync "Adds the Grunt Sync Copy NPM plugin."
-grunt.loadNpmTasks('grunt-sync');
+grunt.loadNpmTasks("grunt-sync");
 endsnippet
 
 snippet syncConfig "Adds the grunt-sync configuration for the plugin."
@@ -249,7 +263,7 @@ sync : {
 		// pretend: true,
 		verbose: ${2:true},
 		files : [
-			{ expand: true, cwd: '${3:src/}', src: ['${4:**}'], dest: '${5:dest/}' }${0:}
+			{ expand: true, cwd: "${3:src/}", src: ["${4:**}"], dest: "${5:dest/}" }${0:}
 		]
 	}
 }
@@ -259,7 +273,7 @@ endsnippet
 # Concat
 #############################################################################
 snippet plugconcat "Add the Grunt Concat NPM plugin."
-grunt.loadNpmTasks('grunt-contrib-concat');
+grunt.loadNpmTasks("grunt-contrib-concat");
 endsnippet
 
 snippet concatConfig "Adds the concat configuration for the plugin."
@@ -297,14 +311,14 @@ endsnippet
 # MkDir
 #############################################################################
 snippet plugmkdir "Add the Grunt MkDir NPM plugin."
-grunt.loadNpmTasks('grunt-mkdir');
+grunt.loadNpmTasks("grunt-mkdir");
 endsnippet
 
 snippet mkdirConfig "Add the mkdir configuration for the plugin"
 mkdir : {
 	${1:dist} : {
 		options: {
-			create: [ '${2:target/}' ]
+			create: [ "${2:target/}" ]
 		}
 	}${0:}
 }
@@ -313,7 +327,7 @@ endsnippet
 snippet mkdirTarget "Add the mkdir configuration target"
 ${1:dist} : {
 	options: {
-		create: [ '${2:target/}' ]
+		create: [ "${2:target/}" ]
 	}
 }${0:}
 endsnippet
@@ -322,6 +336,6 @@ endsnippet
 # Register new tasks.
 #############################################################################
 snippet task "registers a new task."
-grunt.registerTask('${1:name}', [${0:}]);
+grunt.registerTask("${1:name}", [${0:}]);
 endsnippet
 
