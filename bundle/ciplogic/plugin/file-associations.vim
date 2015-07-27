@@ -68,3 +68,7 @@ function! LaunchConfiguration()
 endfunction
 command LaunchConfiguration call LaunchConfiguration()
 
+"
+" Associate PHP (Joomla) files
+"
+au BufRead,BufNewFile templateDetails.xml set filetype=joomla_template.xml

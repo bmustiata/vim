@@ -7,7 +7,7 @@ snippet templateDetails "Create a template details section"
 	<author>${4:Bogdan Mustiata}</author>
 	<authorEmail>${5:bogdan.mustiata@gmail.com}</authorEmail>
 	<authorUrl>${6:http://blog.ciplogic.com/}</authorUrl>
-	<copyright>Copyright (C) `date "+%Y"` Bogdan Mustiata <bogdan.mustiata@gmail.com>. All rights reserved.</copyright>
+	<copyright>Copyright (C) `date "+%Y"` Bogdan Mustiata &lt;bogdan.mustiata@gmail.com&gt;. All rights reserved.</copyright>
 	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
 	<version>${7:1.0.0}</version>
 	<description>${8:Cool Template Description.}</description>
@@ -37,4 +37,8 @@ snippet templateDetails "Create a template details section"
 	<!-- config -->
 </extension>
 
+endsnippet
+
+snippet jdoc "Add a jdoc include"
+<jdoc:include type="${1:modules}" ${2/.+/name="/}${2:position-1}${2/.+/"/}/>
 endsnippet
