@@ -1,0 +1,19 @@
+extends html
+
+snippet polymerComponent "Create a polymer component"
+<link rel="import"
+	href="bower_components/polymer/polymer.html">
+
+<dom-module id="${1:`!p snip.rv += fn[:fn.rfind('.')] `}">
+	<template>
+		${VISUAL}${0:}
+		<content></content>
+	</template>
+
+	<script>
+		Polymer({
+			is: "$1",
+		});
+	</script>
+</dom-module>
+endsnippet
