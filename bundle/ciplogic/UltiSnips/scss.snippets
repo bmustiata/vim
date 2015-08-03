@@ -53,3 +53,15 @@ snippet /@?ex/ "Extend something" r
 @extend ${1:selector};${0:}
 endsnippet
 
+snippet MQ "Add a media query"
+@include MQ(${1:M}) {
+	${VISUAL}${0:}
+}
+endsnippet
+
+snippet hidpi "Add a HiDpi Media Query"
+@include hidpi() {
+	${VISUAL}${0:}
+}
+endsnippet
+

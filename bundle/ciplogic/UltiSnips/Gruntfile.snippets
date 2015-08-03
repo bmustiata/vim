@@ -263,7 +263,14 @@ sync : {
 		// pretend: true,
 		verbose: ${2:true},
 		files : [
-			{ expand: true, cwd: "${3:src/}", src: ["${4:**}"], dest: "${5:dest/}" }${0:}
+			{
+				expand: true,
+				cwd: "${3:src/}",
+				src: [
+					"${5:**}"${0:}
+				],
+				dest: "${4:dest/}"${0:}
+			}
 		]
 	}
 }
