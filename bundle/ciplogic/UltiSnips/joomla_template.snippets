@@ -40,5 +40,22 @@ snippet templateDetails "Create a template details section"
 endsnippet
 
 snippet jdoc "Add a jdoc include"
-<jdoc:include type="${1:modules}" ${2/.+/name="/}${2:position-1}${2/.+/"/}/>
+<jdoc:include type="${1:modules}"${2/.+/ name="/}${2:position-1}${2/.+/"/}${3/.+/ style="/}${3:html5}${3/.+/"/}/>
 endsnippet
+
+snippet pos "Add a position"
+<position>${1:${VISUAL}}</position>${0:}
+endsnippet
+
+priority 1
+
+snippet css "Add a CSS include"
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>${1:/css/template.css}" type="text/css" />
+endsnippet
+
+snippet srcscript "Add an external script reference"
+<script type="text/javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>${1:/js/script.js}"></script>
+endsnippet
+
+priority 0
+

@@ -3,7 +3,8 @@ snippet tsconfig "Add a tsconfig"
 	"compilerOptions": {
 		${1/.+/"target": "/}${1:ES3}${1/.+/",/}
 		${2/.+/"module": "/}${2:commonjs}${2/.+/",/}
-		${3/.+/"sourceMap": /}${3:true}
+		${3/.+/"experimentalDecorators" : /}${3:true}${3/.+/,/}
+		${4/.+/"sourceMap": /}${4:true}
 	}
 }
 endsnippet

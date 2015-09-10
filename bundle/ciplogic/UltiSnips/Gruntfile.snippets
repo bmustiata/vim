@@ -19,6 +19,122 @@ module.exports = function(grunt) {
 };
 endsnippet
 
+snippet grunt_typescript_mocha "Adds a grunt with mocha and typescript config"
+/**
+ * Grunt project configuration.
+ */
+module.exports = function(grunt) {
+	// configuration for the plugins.
+
+	// Project name:        ${1:project-name}
+	// Main ts module:      ${2:MainApplication}
+	// Source folder:       ${3:src/main/ts}
+	// Tests source folder: ${4:src/test/ts}
+	// Output folder:       ${5:lib/}
+	// Test output folder:  ${6:target/test}
+
+	grunt.initConfig({
+		clean: {
+			dist : [
+				"$5"
+			],
+
+			test : [
+				"$6"
+			]
+		},
+
+		typescript: {
+			"dist" : {
+				options: {
+					module : "commonjs",
+					sourceMap: true,
+					declaration: true,
+				},
+				files: [{
+					dest: "$5",
+					src: [
+						"$3/**/*.ts",
+						"$3/**/*.d.ts"
+					]
+				}]
+			},
+
+			"test" : {
+				options: {
+					module : "commonjs",
+					sourceMap: true,
+					declaration: true,
+				},
+				files: [{
+					dest: "$6",
+					src: [
+						"$4/**/*.ts",
+						"$4/**/*.d.ts"
+					]
+				}]
+			}
+		},
+
+		dtsGenerator : {
+			"dist" : {
+				options: {
+					name: "$1",
+					baseDir: ".",
+					out: "$1.d.ts",
+					main: "$1/$5$2",
+					excludes: [
+						"node_modules/dts-generator/node_modules/typescript/bin/lib.core.d.ts",
+						"node_modules/dts-generator/node_modules/typescript/bin/lib.core.es6.d.ts",
+						"node_modules/dts-generator/node_modules/typescript/bin/lib.dom.d.ts",
+						"node_modules/dts-generator/node_modules/typescript/bin/lib.d.ts",
+						"node_modules/dts-generator/node_modules/typescript/bin/lib.es6.d.ts",
+						"node_modules/dts-generator/node_modules/typescript/bin/lib.scriptHost.d.ts",
+						"node_modules/dts-generator/node_modules/typescript/bin/lib.webworker.d.ts",
+						"node_modules/dts-generator/node_modules/typescript/bin/typescript.d.ts",
+						"node_modules/dts-generator/node_modules/typescript/bin/typescript_internal.d.ts",
+						"node_modules/dts-generator/node_modules/typescript/bin/typescriptServices.d.ts",
+						"node_modules/dts-generator/node_modules/typescript/bin/typescriptServices_internal.d.ts"
+					]
+				},
+
+				files : [
+					{
+						expand: true,
+						src: [
+							"$5*.d.ts"
+						]
+					}
+				]
+			}
+		},
+
+		mochaTest: {
+			test: {
+				options: {
+					reporter: "spec",
+					captureFile: "$6tests_results.txt"
+				},
+				src: ["$6**/*.js"]
+			}
+		}
+	});
+
+	// load NPM tasks:
+	grunt.loadNpmTasks("grunt-contrib-clean");
+	grunt.loadNpmTasks("grunt-typescript");
+	grunt.loadNpmTasks("dts-generator");
+	grunt.loadNpmTasks("grunt-mocha-test");
+
+	grunt.registerTask("dist", ["clean:dist", "typescript:dist", "dtsGenerator:dist"]);
+	grunt.registerTask("test", ["clean:test", "typescript:test", "mochaTest:test"]);
+
+	// register our tasks:
+	grunt.registerTask("default", ["dist", "test"]);
+};
+
+endsnippet
+
 snippet grunt_load "Adds a default empty grunt configuration, loading plugins automatically."
 /**
  * Grunt project configuration.
@@ -263,7 +379,14 @@ sync : {
 		// pretend: true,
 		verbose: ${2:true},
 		files : [
-			{ expand: true, cwd: "${3:src/}", src: ["${4:**}"], dest: "${5:dest/}" }${0:}
+			{
+				expand: true,
+				cwd: "${3:src/}",
+				src: [
+					"${5:**}"${0:}
+				],
+				dest: "${4:dest/}"${0:}
+			}
 		]
 	}
 }
@@ -337,5 +460,47 @@ endsnippet
 #############################################################################
 snippet task "registers a new task."
 grunt.registerTask("${1:name}", [${0:}]);
+endsnippet
+
+#############################################################################
+# DtsGenerator
+#############################################################################
+snippet plugdtsGenerator "Add the dts generator task"
+grunt.loadNpmTasks("dts-generator");
+endsnippet
+
+snippet dtsGeneratorConfig "Add the d.ts file generator config."
+dtsGenerator : {
+	"${1:dist}" : {
+		options: {
+			name: "${2:core-lang}",
+			baseDir: ".",
+			out: "$2.d.ts",
+			main: "$2${3:/lib/Iterable}",
+			// FIXME: remove when dts-generator gets fixed.
+			excludes: [
+				"node_modules/dts-generator/node_modules/typescript/bin/lib.core.d.ts",
+				"node_modules/dts-generator/node_modules/typescript/bin/lib.core.es6.d.ts",
+				"node_modules/dts-generator/node_modules/typescript/bin/lib.dom.d.ts",
+				"node_modules/dts-generator/node_modules/typescript/bin/lib.d.ts",
+				"node_modules/dts-generator/node_modules/typescript/bin/lib.es6.d.ts",
+				"node_modules/dts-generator/node_modules/typescript/bin/lib.scriptHost.d.ts",
+				"node_modules/dts-generator/node_modules/typescript/bin/lib.webworker.d.ts",
+				"node_modules/dts-generator/node_modules/typescript/bin/typescript.d.ts",
+				"node_modules/dts-generator/node_modules/typescript/bin/typescript_internal.d.ts",
+				"node_modules/dts-generator/node_modules/typescript/bin/typescriptServices.d.ts",
+				"node_modules/dts-generator/node_modules/typescript/bin/typescriptServices_internal.d.ts"
+			]
+		},
+		files : [
+			{
+				expand: true,
+				src: [
+					"${4:lib}/*.d.ts"
+				]
+			}
+		]
+	}
+}
 endsnippet
 
