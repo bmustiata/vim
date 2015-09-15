@@ -45,3 +45,9 @@ endsnippet
 snippet bash "Adds a bash #!/usr/bin/env declaration."
 #!/usr/bin/env bash${0:}
 endsnippet
+
+snippet mls "Add a multiline string value"
+read -r -d '' ${1:VALUE} << ${2:EOM}
+${VISUAL}${0:}
+$2
+endsnippet
