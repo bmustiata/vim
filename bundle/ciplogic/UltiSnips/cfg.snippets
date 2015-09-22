@@ -1,0 +1,8 @@
+snippet hgauth "Add some mercurial authorization"
+[auth]
+default.schemes = http https
+# this must match the paths.default value.
+default.prefix = ${1:http://10.2.1.84/hg/infinica-root/}
+default.username = ${2:bmustiata}
+endsnippet
+
