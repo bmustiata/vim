@@ -117,9 +117,9 @@ nmap <silent> <Up> gk
 nmap ,l :set list!<CR>
 
 "
-" Tail files with Shift-T
+" Tail files with Shift-F, similar with less
 "
-map T :edit!<CR>G
+map F :edit!<CR>G
 "
 
 "
