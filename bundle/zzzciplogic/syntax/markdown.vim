@@ -1,8 +1,8 @@
 
-function! AsciidocEnableSyntaxRanges()
+function! MarkdownEnableSyntaxRanges()
 " source block syntax highlighting
 if exists('g:loaded_SyntaxRange')
-  for lang in ['c', 'python', 'vim', 'javascript', 'cucumber', 'xml', 'typescript', 'sh', 'java', 'cpp', 'sh']
+  for lang in ['c', 'python', 'vim', 'javascript', 'cucumber', 'xml', 'typescript', 'sh', 'java', 'cpp', 'sh', 'php', 'yaml']
     call SyntaxRange#Include(
           \  '^```' . lang . '$'
           \, '^```$'
@@ -17,4 +17,4 @@ if exists('g:loaded_SyntaxRange')
 endif
 endfunction
 
-call AsciidocEnableSyntaxRanges()
+call MarkdownEnableSyntaxRanges()
