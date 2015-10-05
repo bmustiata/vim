@@ -88,3 +88,9 @@
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
+[submodule "bundle/vim-markdown-wiki"]
+	path = bundle/vim-markdown-wiki
+	url = http://github.com/mmai/vim-markdown-wiki/
+[submodule "bundle/autolink.vim"]
+	path = bundle/autolink.vim
+	url = https://github.com/sampsyo/autolink.vim
