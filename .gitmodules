@@ -82,9 +82,6 @@
 [submodule "bundle/asciidoc-vim"]
 	path = bundle/asciidoc-vim
 	url = https://github.com/dagwieers/asciidoc-vim
-[submodule "bundle/vim-simple-todo"]
-	path = bundle/vim-simple-todo
-	url = https://github.com/bmustiata/vim-simple-todo
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
