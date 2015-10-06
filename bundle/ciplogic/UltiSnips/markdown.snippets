@@ -1,4 +1,4 @@
-snippet a "Create a markdown link"
+snippet a "Create a markdown link" i
 [${1:${VISUAL}}](${2:$1.md})
 endsnippet
 
@@ -6,7 +6,7 @@ snippet /^\s*image\s*$/ "Create a markdown image" r
 ![${1:Image Description}](${2:image.png})
 endsnippet
 
-snippet img "Create a markdown image"
+snippet img "Create a markdown image" i
 ![${1:Image Description}](${2:image.png})
 endsnippet
 
@@ -27,38 +27,38 @@ ${1:}
 endsnippet
 
 snippet h1 "Create a H1 heading."
-# ${1:Header}
+# ${1:${VISUAL}}
 endsnippet
 
 snippet h2 "Create a H2 heading."
-## ${2:Sub header}
+## ${1:${VISUAL}}
 endsnippet
 
 snippet h3 "Create a H3 heading."
-### ${1:title}
+### ${1:${VISUAL}}
 endsnippet
 
 snippet h4 "Create a H4 heading."
-#### ${1:title}
+#### ${1:${VISUAL}}
 endsnippet
 
 snippet h5 "Create a H5 heading."
-##### ${1:title}
+##### ${1:${VISUAL}}
 endsnippet
 
 snippet h6 "Create a H6 heading."
-###### ${6:title}
+###### ${1:${VISUAL}}
 endsnippet
 
-snippet i "italic"
-_${1:text}_
+snippet i "italic" i
+_${1:${VISUAL}}_
 endsnippet
 
-snippet b "bold"
-**${1:text}**
+snippet b "bold" i
+**${1:${VISUAL}}**
 endsnippet
 
-snippet src "Add some source"
+snippet src "Add some source" i
 \`\`\`${1:text}
 ${VISUAL}${0:}
 \`\`\`
@@ -76,5 +76,11 @@ In order to install this run:
 npm install ${1:-g }${2:project}
 \`\`\`
 ${0:}
+endsnippet
+
+snippet ``` "Add some source"
+\`\`\`${1:text}
+${VISUAL}${0:}
+\`\`\`
 endsnippet
 

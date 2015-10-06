@@ -91,6 +91,6 @@
 [submodule "bundle/autolink.vim"]
 	path = bundle/autolink.vim
 	url = https://github.com/sampsyo/autolink.vim
-[submodule "bundle/vim-simple-todo"]
-	path = bundle/vim-simple-todo
-	url = https://github.com/vitalk/vim-simple-todo
+[submodule "bundle/vim-todo"]
+	path = bundle/vim-todo
+	url = https://github.com/bmustiata/vim-todo

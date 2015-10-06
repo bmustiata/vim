@@ -130,4 +130,8 @@ let g:vim_json_syntax_conceal = 0
 "
 " Use a checkbox for the list
 "
-let g:simple_todo_tick_symbol = '✓'
+map <Space> :TodoToggle<CR>
+let g:TodoItemChecked = 'PASSED'
+let g:TodoItemUnChecked = 'FAILED'
+let g:TodoShowSquareBrackets = 0
+
