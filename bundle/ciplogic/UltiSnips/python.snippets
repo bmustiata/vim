@@ -13,7 +13,7 @@ class ${1:TestClass}(unittest.TestCase):
 		"""
 		${4:}
 		"""
-		pass${0:}
+		${VISUAL}${0:}
 
 if __name__ == '__main__':
 	unittest.main()
@@ -21,13 +21,13 @@ endsnippet
 
 snippet /^(\s*)def$/ "Define a method or function" r
 `!p snip.rv += match.group(1)`def ${1:name}(${2:self}):
-`!p snip.rv += match.group(1)`${3/.+/    """ /}${3:documentation}${3/.+/ """\n/}`!p snip.rv += match.group(1)`    ${0:pass}
+`!p snip.rv += match.group(1)`${3/.+/    """ /}${3:documentation}${3/.+/ """\n/}`!p snip.rv += match.group(1)`    ${VISUAL}${0:}
 endsnippet
 
 snippet /^(\s*)sdef$/ "Define a static method" r
 `!p snip.rv += match.group(1)`@classmethod
 `!p snip.rv += match.group(1)`def ${1:name}(${2:self}):
-`!p snip.rv += match.group(1)`${3/.+/    """ /}${3:documentation}${3/.+/ """\n/}`!p snip.rv += match.group(1)`    ${0:pass}
+`!p snip.rv += match.group(1)`${3/.+/    """ /}${3:documentation}${3/.+/ """\n/}`!p snip.rv += match.group(1)`    ${VISUAL}${0:}
 endsnippet
 
 snippet class "Create a new class."
