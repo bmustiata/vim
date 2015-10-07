@@ -131,7 +131,10 @@ let g:vim_json_syntax_conceal = 0
 " Use a checkbox for the list
 "
 map <Space> :TodoToggle<CR>
-"let g:TodoItemChecked = '☒'
-"let g:TodoItemUnChecked = '☐'
-"let g:TodoShowSquareBrackets = 0
 
+function! TodoCoolCheckboxes()
+    let g:TodoItemChecked = '☒'
+    let g:TodoItemUnChecked = '☐'
+    let g:TodoShowSquareBrackets = 0
+endfunction
+command TodoCoolCheckboxes call TodoCoolCheckboxes()
