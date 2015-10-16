@@ -26,11 +26,11 @@ snippet grunt_typescript_mocha "Adds a grunt with mocha and typescript config"
 module.exports = function(grunt) {
 	// configuration for the plugins.
 
-	// Project name:        ${1:project-name}
-	// Main ts module:      ${2:MainApplication}
-	// Source folder:       ${3:src/main/ts}
+	// Project name:		${1:project-name}
+	// Main ts module:	  ${2:MainApplication}
+	// Source folder:	   ${3:src/main/ts}
 	// Tests source folder: ${4:src/test/ts}
-	// Output folder:       ${5:lib/}
+	// Output folder:	   ${5:lib/}
 	// Test output folder:  ${6:target/test}
 
 	grunt.initConfig({
@@ -495,3 +495,22 @@ dtsGenerator : {
 }
 endsnippet
 
+#############################################################################
+# babel support
+#############################################################################
+snippet babelConfig "Add a babel target."
+babel: {
+	${1:dist} : {
+		options: {
+			${2/.+/sourceMap: /}${2:true}
+		},
+		files: [
+			{ expand: true, cwd: "${3:src/}", src: ["${4:**/*.jsx}"${0:}], dest: "${5:target/jsx/}" }
+		]
+	}
+}
+endsnippet
+
+snippet plugbabel "Plugs the babel plugin"
+grunt.loadNpmTasks("grunt-babel");
+endsnippet
