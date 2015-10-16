@@ -9,6 +9,7 @@ set noswapfile
 :set nocp
 :syntax on
 :filetype plugin on
+:set number
 
 " highlight the searches
 :set hlsearch
