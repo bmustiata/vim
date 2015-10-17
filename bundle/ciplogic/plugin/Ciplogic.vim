@@ -136,3 +136,5 @@ function! TodoCoolCheckboxes()
     let g:TodoShowSquareBrackets = 0
 endfunction
 command TodoCoolCheckboxes call TodoCoolCheckboxes()
+
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }

@@ -16,3 +16,24 @@ export class ${1:name} {
 }
 endsnippet
 
+snippet react "Add a react reference"
+/// <reference path="${1:}../../../typings/react/react.d.ts"/>
+
+import React = require('react');
+endsnippet
+
+snippet rclass "Create a react class"
+export interface $1Props extends React.Props<any> {
+}
+
+export interface $1State {
+}
+
+export class ${1:ClassName} extends React.Component<$1Props, $1State> {
+	render() {
+		return (
+			$0
+		);
+	}
+}
+endsnippet

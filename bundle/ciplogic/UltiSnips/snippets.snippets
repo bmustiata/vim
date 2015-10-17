@@ -42,3 +42,6 @@ snippet /matchval/ "Adds the value of a group match" r
 \`!p snip.rv += match.group(${1:1})\`${0:}
 endsnippet
 
+snippet notre "Add a not regexp" i
+^((?!${1:word}).)*$${0:}
+endsnippet
