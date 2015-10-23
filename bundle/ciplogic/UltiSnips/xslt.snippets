@@ -10,8 +10,8 @@ endsnippet
 
 snippet xsl_keep_structure "Adds a XSL that keeps the general structure of the input document"
 <?xml version="1.0" encoding="${1:UTF-8}"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-	<xsl:output method="${2:xml}" encoding="${3:utf-8}" indent="${4:yes}"/>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="${2:1.0}">
+	<xsl:output method="${3:xml}" encoding="${4:utf-8}" indent="${5:yes}"/>
 
 	<xsl:template match="@*|node()">
 		<xsl:copy>
@@ -19,17 +19,17 @@ snippet xsl_keep_structure "Adds a XSL that keeps the general structure of the i
 		</xsl:copy>
 	</xsl:template>
 
-	<xsl:template match="${5:input[@type='text']}">
-		${6:<xsl:value-of select="@value"/>}${0:}
+	<xsl:template match="${6:input[@type='text']}">
+		${7:<xsl:value-of select="@value"/>}${0:}
 	</xsl:template>
 </xsl:stylesheet>
 endsnippet
 
 snippet xsl
 <?xml version="1.0" encoding="${1:UTF-8}"?>
-<xsl:stylesheet version="1.0"
+<xsl:stylesheet version="${2:1.0}"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:output method="${2:xml}" encoding="${3:utf-8}" indent="${4:yes}"/>
+	<xsl:output method="${3:xml}" encoding="${4:utf-8}" indent="${5:yes}"/>
 	${0:}
 </xsl:stylesheet>
 endsnippet
