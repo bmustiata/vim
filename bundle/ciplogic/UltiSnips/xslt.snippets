@@ -10,7 +10,7 @@ endsnippet
 
 snippet xsl_keep_structure "Adds a XSL that keeps the general structure of the input document"
 <?xml version="1.0" encoding="${1:UTF-8}"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 	<xsl:output method="${2:xml}" encoding="${3:utf-8}" indent="${4:yes}"/>
 
 	<xsl:template match="@*|node()">
@@ -76,5 +76,19 @@ snippet if
 <xsl:if test="${1:condition}">
 	${VISUAL}${0:}
 </xsl:if>
+endsnippet
+
+snippet element "Add an element"
+<xsl:element name="${1:tagName}">
+	${VISUAL}${0:}
+</xsl:element>
+endsnippet
+
+snippet var "Add a variable"
+<xsl:variable name="${1:name}" select="${2:.}"/>
+endsnippet
+
+snippet param "Add an external parameter"
+<xsl:param name="${1:name}"/>
 endsnippet
 
