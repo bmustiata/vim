@@ -1,0 +1,18 @@
+snippet req "require a module"
+import * as ${1:name} from "${2:module}"
+endsnippet
+
+snippet im "import"
+import { ${1:name} } from "${2:module}"
+endsnippet
+
+snippet ref "add a reference"
+/// <reference path="${1:../../../typings/}${2:node}/$2.d.ts"/>
+endsnippet
+
+snippet class "Add a class"
+export class ${1:name} {
+	$0
+}
+endsnippet
+
