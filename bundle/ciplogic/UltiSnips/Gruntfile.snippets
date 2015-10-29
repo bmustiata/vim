@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 	// Main ts module:	    ${2:MainApplication}
 	// Source folder:	    ${3:src/main/ts}
 	// Tests source folder: ${4:src/test/ts}
-	// Output folder:	    ${5:lib/}
+	// Output folder:	    ${5:lib}
 	// Test output folder:  ${6:target/test}
 
 	grunt.initConfig({
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
 					name: "$1",
 					baseDir: ".",
 					out: "$1.d.ts",
-					main: "$1/$5$2",
+					main: "$1/$5/$2",
 					excludes: [
 						"node_modules/**/*.d.ts",
 						"typings/**/*.d.ts"
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
 					{
 						expand: true,
 						src: [
-							"$5*.d.ts"
+							"$5/*.d.ts"
 						]
 					}
 				]
@@ -107,9 +107,9 @@ module.exports = function(grunt) {
 			test: {
 				options: {
 					reporter: "spec",
-					captureFile: "$6tests_results.txt"
+					captureFile: "$6/tests_results.txt"
 				},
-				src: ["$6**/*.js"]
+				src: ["$6/**/*.js"]
 			}
 		}
 	});
@@ -518,4 +518,11 @@ endsnippet
 
 snippet plugbabel "Plugs the babel plugin"
 grunt.loadNpmTasks("grunt-babel");
+endsnippet
+
+#############################################################################
+# browserify sectin
+#############################################################################
+snippet browserifyConfig "Add a browserify config"
+
 endsnippet

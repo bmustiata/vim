@@ -16,13 +16,14 @@ export class ${1:name} {
 }
 endsnippet
 
-snippet react "Add a react reference"
+snippet rreq "Add a react require"
 /// <reference path="${1:}../../../typings/react/react.d.ts"/>
+/// <reference path="$1../../../typings/react-dom/react-dom.d.ts"/>
 
 import React = require('react');
 endsnippet
 
-snippet rclass "Create a react class"
+snippet rcomponent "Create a react component"
 export interface $1Props extends React.Props<any> {
 }
 
@@ -36,4 +37,11 @@ export class ${1:ClassName} extends React.Component<$1Props, $1State> {
 		);
 	}
 }
+endsnippet
+
+snippet rrender "React DOM Render"
+ReactDOM.render(
+	${1:<div>what</div>},
+	document.getElementById('${2:example}')
+)
 endsnippet
