@@ -42,9 +42,6 @@ set noswapfile
 " a mustang2 slight variation
 :colorscheme ciplogic
 
-" use the system clipboard
-:set clipboard=unnamedplus
-
 " automax the current window
 " :set winheight=999
 

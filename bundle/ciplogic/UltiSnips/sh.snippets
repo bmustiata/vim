@@ -1,18 +1,22 @@
 snippet c "Add a comment"
+# ${VISUAL}${0:}
+endsnippet
+
+snippet cs "Add a comment section"
 #
-# ${0:}
+# ${VISUAL}${0:}
 #
 endsnippet
 
 snippet if "Create a bash if statement"
 if [[ ${1:condition} ]]; then
-	${0:}
+	${VISUAL}${0:}
 fi # [[ $1 ]]
 endsnippet
 
 snippet ife "Create a bash if/else statement"
 if [[ ${1:condition} ]]; then
-	${0:}
+	${VISUAL}${0:}
 else # not [[ $1 ]]
 
 fi   # else [[ $1 ]]
@@ -28,18 +32,6 @@ snippet for "Create a for loop"
 for ${1:f} in ${2:\`ls\`}; do
 	${0:}
 done
-endsnippet
-
-snippet add_jvm "Add a JVM into a ciplogic projects definition"
-add_jvm ${1:8} '${2:/full/path/to/java_home}' '$2/bin'${0:}
-endsnippet
-
-snippet add_project "Add a Project into a ciplogic projects definition"
-add_project ${1:coolproject} "${2:/project/location}" "${3:target/artifact.war}" "${4:deployed}.war $4" "$4.war"${0:}
-endsnippet
-
-snippet add_server "Add a Server into a ciplogic projects definition"
-add_server ${1:tomcat7} "${2:/full/path/to/server_home}" "${3:webapps}" "${4:logs}"${0:}
 endsnippet
 
 snippet bash "Adds a bash #!/usr/bin/env declaration."
