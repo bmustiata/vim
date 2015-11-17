@@ -36,9 +36,9 @@ hi Conditional guifg=#888888 guibg=NONE guisp=NONE gui=bold ctermfg=102 ctermbg=
 hi StorageClass guifg=#e2e2e5 guibg=NONE guisp=NONE gui=bold ctermfg=254 ctermbg=NONE cterm=bold
 hi Todo guifg=#F9F9FF guibg=#BD9800 guisp=#BD9800 gui=NONE ctermfg=189 ctermbg=1 cterm=NONE
 hi Special guifg=#888888 guibg=NONE guisp=NONE gui=bold ctermfg=102 ctermbg=NONE cterm=bold
-hi LineNr guifg=#808080 guibg=#000000 guisp=#000000 gui=NONE ctermfg=8 ctermbg=NONE cterm=NONE
+hi LineNr guifg=#888888 guibg=#2b2b2b guisp=#2b2b2b gui=NONE ctermfg=8 ctermbg=235 cterm=NONE
 hi StatusLine guifg=#192224 guibg=#BD9800 guisp=#BD9800 gui=bold ctermfg=235 ctermbg=1 cterm=bold
-hi Normal guifg=#e2e2e5 guibg=#2b2b2b guisp=#2b2b2b gui=NONE ctermfg=254 ctermbg=235 cterm=NONE
+hi Normal guifg=#e2e2e5 guibg=#0b0b0b guisp=#0b0b0b gui=NONE ctermfg=254 ctermbg=232 cterm=NONE
 hi Label guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=1 ctermbg=NONE cterm=bold
 "hi CTagsImport -- no settings --
 hi PMenuSel guifg=#192224 guibg=#BD9800 guisp=#BD9800 gui=NONE ctermfg=235 ctermbg=1 cterm=NONE
