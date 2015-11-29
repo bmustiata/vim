@@ -45,3 +45,14 @@ ReactDOM.render(
 	document.getElementById('${2:example}')
 )
 endsnippet
+
+snippet singleton "Create a singleton instance"
+static get() : ${1:type} {
+	if (window["${2:key}"]) {
+		return window["$2"];
+	} else {
+		return window["$2"] = new $1();
+	}
+}
+endsnippet
+
