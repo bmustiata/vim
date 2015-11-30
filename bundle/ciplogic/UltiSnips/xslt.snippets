@@ -1,4 +1,4 @@
-snippet if-else "Adds an if else"
+snippet ife "Adds an if else"
 <xsl:choose>
 	<xsl:when test="${1:condition}">
 		${VISUAL}${0:}
@@ -10,7 +10,7 @@ endsnippet
 
 snippet xsl_keep_structure "Adds a XSL that keeps the general structure of the input document"
 <?xml version="1.0" encoding="${1:UTF-8}"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="${2:1.0}">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="${2:2.0}">
 	<xsl:output method="${3:xml}" encoding="${4:utf-8}" indent="${5:yes}"/>
 
 	<xsl:template match="@*|node()">
@@ -35,29 +35,35 @@ snippet xsl
 endsnippet
 
 snippet template
-<xsl:template match="${1:}">
+<xsl:template match="${1:@*|node()}"${2/.+/ mode="/}${2:custom}${2/.+/"/}>
 	${0:}
 </xsl:template>
 endsnippet
 
 snippet apply
-<xsl:apply-templates select="${1:.}"/>${0:}
+<xsl:apply-templates select="${1:@*|node()}"${2/.+/ mode="/}${2:custom}${2/.+/"/}/>${0:}
 endsnippet
 
 snippet applytemplates
-<xsl:apply-templates select="${1:.}"/>${0:}
+<xsl:apply-templates select="${1:@*|node()}"${2/.+/ mode="/}${2:custom}${2/.+/"/}/>${0:}
 endsnippet
 
 snippet apply-templates
-<xsl:apply-templates select="${1:.}"/>${0:}
+<xsl:apply-templates select="${1:@*|node()}"${2/.+/ mode="/}${2:custom}${2/.+/"/}/>${0:}
+endsnippet
+
+snippet copyall "Copy all the subtree"
+<xsl:copy>
+	<xsl:apply-templates select="@*|node()"${1/.+/ mode="/}${1:custom}${1/.+/"/}/>
+</xsl:copy>
 endsnippet
 
 snippet copyof
-<xsl:copy-of select="${1:.}"/>${0:}
+<xsl:copy-of select="${1:@*|node()}"/>${0:}
 endsnippet
 
 snippet copy-of
-<xsl:copy-of select="${1:.}"/>${0:}
+<xsl:copy-of select="${1:@*|node()}"/>${0:}
 endsnippet
 
 snippet valueof
@@ -78,7 +84,7 @@ snippet if
 </xsl:if>
 endsnippet
 
-snippet element "Add an element"
+snippet elem "Add an element"
 <xsl:element name="${1:tagName}">
 	${VISUAL}${0:}
 </xsl:element>
