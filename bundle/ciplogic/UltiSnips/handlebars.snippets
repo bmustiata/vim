@@ -3,3 +3,16 @@ snippet if "Add an if statement" i
 	${VISUAL}${0:}
 {{/if}}
 endsnippet
+
+snippet ife "Add an if/else statement"
+{{#if ${1:expression}}}
+	${VISUAL}${0:}
+{{else}}
+{{/if}}
+endsnippet
+
+snippet each "Add an each statement" i
+{{#each ${1:expression}}}
+	${VISUAL}${0:}
+{{/each}}
+endsnippet

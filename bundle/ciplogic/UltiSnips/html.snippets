@@ -88,3 +88,9 @@ snippet /^(\s*)<?a/ "Create a link element." r
 `!p snip.rv += match.group(1)`<a href="${1:}"${2:}>${VISUAL}${0:}</a>
 endsnippet
 
+snippet <template "Add a template"
+<template name="${1:hello}">
+	${VISUAL}${0:}
+</template>
+endsnippet
+

@@ -1,0 +1,16 @@
+snippet pypirc "Add a default pypirc"
+[distutils]
+index-servers =
+  pypi
+  pypitest
+
+[pypi]
+repository=https://pypi.python.org/pypi
+username=${1:username}
+password=${2:password}
+
+[pypitest]
+repository=https://testpypi.python.org/pypi
+username=${3:$1}
+password=${4:$2}
+endsnippet

@@ -4,7 +4,6 @@
 au BufRead,BufNewFile pom.xml set filetype=pom_xml.xml
 au BufRead,BufNewFile rebel.xml set filetype=rebel_xml.xml
 
-au BufRead,BufNewFile *-*.html set filetype=polymer_html.html
 
 "
 " XSL mappings.
@@ -79,4 +78,16 @@ endfunction
 command PhpJoomla call PhpJoomla()
 command JoomlaPhp call PhpJoomla()
 
+au BufRead,BufNewFile *-*.html set filetype=polymer_html.html
+
+au BufRead,BufNewFile *.html set filetype=javascript.xml.html
+
+"
+" Associate settigns for Meteor editing.
+"
+function! JsMeteor()
+    au BufRead,BufNewFile *.html set filetype=meteor_html.handlebars.xml.html
+    au BufRead,BufNewFile *.js set filetype=meteor_js.javascript
+endfunction
+command JsMeteor call JsMeteor()
 

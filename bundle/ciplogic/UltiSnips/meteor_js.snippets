@@ -1,0 +1,43 @@
+snippet helper "Add a template helper"
+Template.${1:templateName}.helpers({
+	${2:name}: function() {
+		${VISUAL}${0:}
+	}
+});
+endsnippet
+
+snippet event "Add a template event"
+Template.${1:templateName}.events({
+	'${2:click button}': function(${3:ev}) {
+		${VISUAL}${0:}
+	}
+});
+endsnippet
+
+snippet sset "Session set value"
+Session.set("${1:key}", ${0:});
+endsnippet
+
+snippet sget "Session get value"
+Session.get("${1:key}")${0:}
+endsnippet
+
+snippet sdef "Set a default session value"
+Session.setDefault("${1:key}", ${0:});
+endsnippet
+
+snippet startup "Code to run on Meteor's startup"
+Meteor.startup(function() {
+	${VISUAL}${0:}
+});
+endsnippet
+
+snippet mongo "Create a collection"
+${1:Name} = new Mongo.Collection("${2:$1}");
+endsnippet
+
+snippet update "Update a collection"
+${1:Name}.update({_id: this._id},
+				 {$set: {${0:}}});
+endsnippet
+
