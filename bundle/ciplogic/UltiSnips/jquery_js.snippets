@@ -1,0 +1,12 @@
+snippet $.ajax "Do an ajax call"
+$.ajax("${1:url}", {
+	method: "${2:POST}",
+	cache: false,
+	// headers: {},
+	data: {
+	},
+	success: function(data, textStatus, jqXHR) {
+		${0:}
+	}
+});
+endsnippet
