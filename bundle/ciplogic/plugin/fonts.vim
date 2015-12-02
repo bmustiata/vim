@@ -12,4 +12,6 @@ if has('gui_running')
     endif
 endif
 
-set encoding=utf-8
+if !has('nvim')
+    set encoding=utf-8
+endif
