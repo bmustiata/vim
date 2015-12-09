@@ -1,0 +1,76 @@
+snippet base "Base extending generator."
+var generators = require("yeoman-generator");
+
+/*
+ * Available priorities:
+ * 1. initializing
+ * 2. prompting
+ * 3. configuring
+ * 4. default
+ * 5. writing
+ * 6. conflicts
+ * 7. install
+ * 8. end
+ */
+module.exports = generators.Base.extend({
+	/**
+	 * constructor - The constructor for the generator.
+	 */
+	constructor:function() {
+		generators.Base.apply(this, arguments);
+		${0:}
+	},
+
+    /**
+     * Copy as ES6 templates all the files from inside the templates/ folder.
+     */
+    writing: function() {
+        this.fs.copyTpl(
+            this.templatePath(),
+            this.destinationPath(),
+            {
+                // context
+            }
+        );
+    }
+});
+endsnippet
+
+snippet named "NamedBase extending generator."
+var generators = require("yeoman-generator");
+
+/*
+ * Available priorities:
+ * 1. initializing
+ * 2. prompting
+ * 3. configuring
+ * 4. default
+ * 5. writing
+ * 6. conflicts
+ * 7. install
+ * 8. end
+ */
+module.exports = generators.NamedBase.extend({
+	/**
+	 * constructor - The constructor for the generator.
+	 */
+	constructor:function() {
+		generators.NamedBase.apply(this, arguments);
+		${0:}
+	},
+
+    /**
+     * Copy as ES6 templates all the files from inside the templates/ folder.
+     */
+    writing: function() {
+        this.fs.copyTpl(
+            this.templatePath(),
+            this.destinationPath(),
+            {
+                // context
+            }
+        );
+    }
+});
+endsnippet
+
