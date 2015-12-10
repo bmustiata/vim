@@ -1,0 +1,36 @@
+snippet rc "Add a replication controller"
+apiVersion: v1
+kind: ReplicationController
+metadata:
+	name: ${1:my-nginx}
+spec:
+	replicas: ${2:1}
+	template:
+		metadata:
+			labels:
+				app: ${3:nginx}
+		spec:
+			containers:
+			- name: ${4:$3}
+				image: ${5:$3}
+				ports:
+				- containerPort: ${6:80}
+endsnippet
+
+snippet service "Add a service"
+apiVersion: v1
+kind: Service
+metadata:
+	labels:
+		name: ${2:$1}
+	name: ${1:servicename}
+spec:
+	ports:
+		# The port that this service should serve on.
+		- port: ${3:8080}
+	# Label keys and values that must match in order to receive traffic for this service.
+	selector:
+		app: ${4:rcname}
+	type: LoadBalancer
+endsnippet
+
