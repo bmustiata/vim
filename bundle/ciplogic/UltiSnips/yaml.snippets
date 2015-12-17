@@ -8,13 +8,13 @@ spec:
 	template:
 		metadata:
 			labels:
-				app: ${3:nginx}
+				app: ${3:$1}
 		spec:
 			containers:
 			- name: ${4:$3}
-				image: ${5:$3}
-				ports:
-				- containerPort: ${6:80}
+			  image: ${5:$3}
+			  ports:
+			  - containerPort: ${6:80}
 endsnippet
 
 snippet service "Add a service"
@@ -25,12 +25,15 @@ metadata:
 		name: ${2:$1}
 	name: ${1:servicename}
 spec:
+	publicIPs: [${3:10.5.1.1}]
 	ports:
-		# The port that this service should serve on.
-		- port: ${3:8080}
+		# port = container port 
+		- port: ${4:8080}
+		  nodePort: ${5:32000}
 	# Label keys and values that must match in order to receive traffic for this service.
 	selector:
-		app: ${4:rcname}
-	type: LoadBalancer
+		app: ${6:$1}
+	# or NodeService
+	type: ${7:LoadBalancer}
 endsnippet
 
