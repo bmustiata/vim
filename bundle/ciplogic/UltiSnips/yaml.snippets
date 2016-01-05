@@ -37,3 +37,12 @@ spec:
 	type: ${7:LoadBalancer}
 endsnippet
 
+snippet compose "Docker compose"
+${1:registry}:
+	image: ${2:$1}
+	ports:
+	 - ${3:5000}:${4:$3}
+#    environment:
+#    volumes:
+#     - /tmp/data:/var/lib/registry
+endsnippet

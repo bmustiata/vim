@@ -1,11 +1,11 @@
 snippet vhost "Add a virtual host"
 server {
 	listen		80;
-	server_name	${1:what.com};
+	server_name	${1:localhost};
 
 	location / {
-		root	${2:/var/www/blog}
-		index	index.html index.html index.php
+		root	${2:/var/www/html};
+		index	index.html index.html index.php;
 	}
 
 	location ~ \.php$ {

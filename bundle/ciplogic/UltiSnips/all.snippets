@@ -1,5 +1,5 @@
 #
-# Currend date
+# Current date
 #
 snippet date "Adds the current date."
 `!p
@@ -7,6 +7,18 @@ import datetime
 
 now = datetime.date.today()
 snip.rv += "%04d-%02d-%02d" % (now.year, now.month, now.day)
+`
+endsnippet
+
+#
+# Current time
+#
+snippet time "Adds the current time"
+`!p
+import datetime
+
+now = datetime.datetime.now()
+snip.rv += "%02d:%02d:%02d" % (now.hour, now.minute, now.second)
 `
 endsnippet
 
