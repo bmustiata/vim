@@ -58,7 +58,7 @@ for arg in re.split("\s*,\s*", t[2]):
 `!p snip.rv += indent`}${1/.+/.bind(/}${1:this}${1/.+/)/};
 endsnippet
 
-snippet /^(\s*)((\w+)(\s*))\:(.*)func?/ "Create a method, that is preceded by a :" r
+snippet /^(\s*)((.+)(\s*))\:(.*)func?/ "Create a method, that is preceded by a :" r
 `!p
 indent = match.group(1)
 
@@ -300,5 +300,5 @@ endsnippet
 snippet setTimeout "setTimeout function"
 setTimeout(function() {
 	${VISUAL}${0:}
-}, ${1:0});
+}${2/.+/.bind(/}${2:this}${2/.+/)/}, ${1:0});
 endsnippet

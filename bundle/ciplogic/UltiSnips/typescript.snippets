@@ -46,6 +46,43 @@ ReactDOM.render(
 )
 endsnippet
 
+snippet action "Create a react/flux action"
+/**
+ * $1 - ${2:}
+ */
+export class ${1:CustomAction} implements Action {
+	static NAME = "$1"
+
+	name = $1.NAME
+}
+endsnippet
+
+snippet datastore "Create a datastore snippet"
+import { register, Action } from "../dispatch/Dispatcher"
+import {EventEmitter, createEventEmitter} from "../events/EventEmitter"
+
+export class ${1:DataStore} {
+	events : EventEmitter = createEventEmitter()
+
+	constructor() {
+		register((a: Action) => {
+			// if (a.name == SelectAvailablePlanAction.NAME) {
+			//	this.events.emit("selected-plan-change", this.currentPlan)
+			//}
+			${0:}
+		})
+	}
+
+	static get() : $1 {
+		if (window["$1_INSTANCE"]) {
+			return window["$1_INSTANCE"];
+		} else {
+			return window["$1_INSTANCE"] = new $1();
+		}
+	}
+}
+endsnippet
+
 snippet singleton "Create a singleton instance"
 static get() : ${1:type} {
 	if (window["${2:key}"]) {
