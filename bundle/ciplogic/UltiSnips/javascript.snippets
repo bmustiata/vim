@@ -302,3 +302,9 @@ setTimeout(function() {
 	${VISUAL}${0:}
 }${2/.+/.bind(/}${2:this}${2/.+/)/}, ${1:0});
 endsnippet
+
+snippet .query "create a query" i
+.query("${1:select 1+1 as solution}", (err, rows, fields) => {
+	${VISUAL}${0:}
+});
+endsnippet

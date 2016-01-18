@@ -86,3 +86,10 @@ snippet python "Add python as a shell script"
 #!/usr/bin/env python
 endsnippet
 
+snippet step "Add a behave step"
+@step("${1:step definition}")
+${2/.+/@iframe("/}${2:default}${2/.+/")/}
+def ${3:step_impl}(context):
+	${0:pass}
+endsnippet
+
