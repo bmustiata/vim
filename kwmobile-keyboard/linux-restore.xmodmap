@@ -1,0 +1,10 @@
+
+! clear the Alt/Meta key
+clear mod1
+! clear the Super/Win key
+clear mod4
+
+! set the Super/Win key as the Alt key.
+add mod1 = Alt_L Alt_R Meta_L
+! set the Alt key as being the Windows key.
+add mod4 = Super_L Super_R Super_L Hyper_L
