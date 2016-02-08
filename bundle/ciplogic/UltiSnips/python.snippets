@@ -2,6 +2,10 @@ snippet from "Adds a from .. import"
 from ${1:name} import ${2:$1}
 endsnippet
 
+snippet P "Create a behave parameter" i
+(?P<${1:name}>.*?)
+endsnippet
+
 snippet unittest "Add a unittest"
 import unittest
 
@@ -93,3 +97,6 @@ def ${3:step_impl}(context):
 	${0:pass}
 endsnippet
 
+snippet print "Add a print"
+print(${0:})
+endsnippet
