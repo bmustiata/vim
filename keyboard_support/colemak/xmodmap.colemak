@@ -112,12 +112,12 @@ clear Lock
 !keycode  92 = Print Sys_Req
 !keycode  93 = Mode_switch
 !keycode  97 = Home
-!keycode  98 = Up
+keycode  98 = Up
 !keycode  99 = Prior
-!keycode 100 = Left
-!keycode 102 = Right
+keycode 100 = Left
+keycode 102 = Right
 !keycode 103 = End
-!keycode 104 = Down
+keycode 104 = Down
 !keycode 105 = Next
 !keycode 106 = Insert
 !keycode 107 = Delete

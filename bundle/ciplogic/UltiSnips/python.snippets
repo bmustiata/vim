@@ -1,9 +1,17 @@
+snippet super "Add a super call"
+super(${1:SuperClass}, self).__init__(${2:parameters})
+endsnippet
+
 snippet from "Adds a from .. import"
 from ${1:name} import ${2:$1}
 endsnippet
 
 snippet P "Create a behave parameter" i
 (?P<${1:name}>.*?)
+endsnippet
+
+snippet self "Create an assignment"
+self._${1:name} = $1${0:}
 endsnippet
 
 snippet unittest "Add a unittest"
