@@ -1,0 +1,20 @@
+snippet modal "Add a modal dialog"
+<div class="modal fade" id="${1:modalId}">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title">${2:Title}</h4>
+			</div>
+			<div class="modal-body">
+				${VISUAL}${0:}
+			</div>
+			<div class="modal-footer">
+				<div class="form-actions">
+					<button class="btn js-close-dialog">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+endsnippet
