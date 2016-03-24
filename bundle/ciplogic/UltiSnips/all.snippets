@@ -1,7 +1,7 @@
 #
 # Current date
 #
-snippet date "Adds the current date."
+snippet date "Adds the current date." i
 `!p
 import datetime
 
@@ -13,7 +13,7 @@ endsnippet
 #
 # Current time
 #
-snippet time "Adds the current time"
+snippet time "Adds the current time" i
 `!p
 import datetime
 
@@ -33,10 +33,21 @@ snip.rv += os.getcwd()
 `
 endsnippet
 
-snippet bm "Bogdan Mustiata"
+snippet bm "Bogdan Mustiata" i
 Bogdan Mustiata
 endsnippet
 
-snippet bme "Bogdan Mustiata <bogdan.mustiata@gmail.com>"
+snippet bme "Bogdan Mustiata <bogdan.mustiata@gmail.com>" i
 Bogdan Mustiata <${1:bogdan.mustiata@gmail.com}>
+endsnippet
+
+snippet tstamp "Add a timestamp" i
+`!p
+import datetime
+
+now = datetime.date.today()
+snip.rv += "%04d.%02d.%02d-" % (now.year, now.month, now.day)
+now = datetime.datetime.now()
+snip.rv += "%02d:%02d:%02d" % (now.hour, now.minute, now.second)
+`
 endsnippet

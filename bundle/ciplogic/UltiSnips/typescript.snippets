@@ -83,6 +83,13 @@ export class ${1:DataStore} {
 }
 endsnippet
 
+snippet ifact "Create an if action"
+if (${1:a}.name == ${2:Action}.NAME) {
+	let ${3:action} = <$2>$1;
+	${0:}
+}
+endsnippet
+
 snippet singleton "Create a singleton instance"
 static get() : ${1:type} {
 	if (window["${2:key}"]) {

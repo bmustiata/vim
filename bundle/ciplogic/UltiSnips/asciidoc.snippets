@@ -52,4 +52,34 @@ ${VISUAL}${0:}
 -----------------------------------------------------------------------------
 endsnippet
 
+snippet uml "Create a UML snippet with plantuml"
+[plantuml, ${1:germanium-selectors-uml}, png]
+------------------------------------------------------------------------------
+${0:class A<T> <<singleton>> {
+	{abstract} -int x
+	{static} #void meta()
+}
+
+class B
+
+A <|-- B}
+------------------------------------------------------------------------------
+endsnippet
+
+snippet api "A single API call"
+*Description*
+
+${0:}
+
+*Signature*
+
+[source,python]
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+
+
+*Sample*
+${VISUAL}
+endsnippet
 
