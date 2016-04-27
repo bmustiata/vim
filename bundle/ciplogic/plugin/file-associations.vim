@@ -82,6 +82,8 @@ au BufRead,BufNewFile *-*.html set filetype=polymer_html.html
 
 au BufRead,BufNewFile *.html set filetype=javascript.xml.html
 
+au BufRead,BufNewFile Jenkinsfile set filetype=Jenkinsfile.groovy
+
 "
 " Associate settigns for Meteor editing.
 "
