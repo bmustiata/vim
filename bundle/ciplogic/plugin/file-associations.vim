@@ -85,6 +85,11 @@ au BufRead,BufNewFile *.html set filetype=javascript.xml.html
 au BufRead,BufNewFile Jenkinsfile set filetype=Jenkinsfile.groovy
 
 "
+" Associate hexo ejs files
+"
+au BufRead,BufNewFile *.ejs set filetype=xml.html
+
+"
 " Associate settigns for Meteor editing.
 "
 function! JsMeteor()
