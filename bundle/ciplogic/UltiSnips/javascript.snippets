@@ -308,3 +308,13 @@ snippet .query "create a query" i
 	${VISUAL}${0:}
 });
 endsnippet
+
+snippet infcom "Add an infinica command."
+editor.Y.infinica.ckeditor.runInfinicaCommand({
+	editor: editor,
+	code: function() {
+		${VISUAL}
+	}
+});
+endsnippet
+
