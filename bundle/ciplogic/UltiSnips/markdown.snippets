@@ -1,5 +1,5 @@
 snippet a "Create a markdown link" i
-[${1:${VISUAL}}](${2:$1.md})
+[${2:$1}](${1:${VISUAL}})
 endsnippet
 
 snippet /^\s*image\s*$/ "Create a markdown image" r
@@ -64,6 +64,12 @@ ${VISUAL}${0:}
 \`\`\`
 endsnippet
 
+snippet py "Add some python source" i
+\`\`\`py
+${VISUAL}${0:}
+\`\`\`
+endsnippet
+
 #
 # Add an install section.
 #
@@ -80,6 +86,43 @@ endsnippet
 
 snippet ``` "Add some source"
 \`\`\`${1:text}
+${VISUAL}${0:}
+\`\`\`
+endsnippet
+
+snippet post "Create a hexo post"
+title: ${1:GermaniumHQ.com is Up!}
+date: `!p
+import datetime
+
+now = datetime.date.today()
+snip.rv += "%04d-%02d-%02d" % (now.year, now.month, now.day)
+`
+tags:
+${0:- Website
+- GermaniumHQ
+- Administration}
+category: ${2:News}
+lede: ${3:The initial version of the Germanium website is finally up. Containing the full documentation, and contact information, it is the first step in reaching out.}
+thumbnail: /assets/img/posts/${4:${VISUAL}}
+---
+
+<div class="image-strip">
+{% img /assets/img/posts/$4 %}
+</div>
+
+## $1
+
+endsnippet
+
+snippet sh "Add some shell code"
+\`\`\`sh
+${VISUAL}${0:}
+\`\`\`
+endsnippet
+
+snippet py "Add some python code"
+\`\`\`py
 ${VISUAL}${0:}
 \`\`\`
 endsnippet
