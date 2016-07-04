@@ -8,10 +8,22 @@ snippet cs "Add a comment section"
 #
 endsnippet
 
+snippet css "Add a comment mega section"
+#############################################################################
+# ${VISUAL}${0:}
+#############################################################################
+endsnippet
+
 snippet if "Create a bash if statement"
 if [[ ${1:condition} ]]; then
 	${VISUAL}${0:}
 fi # [[ $1 ]]
+endsnippet
+
+snippet iffile "Create a bash if statement that checks for a file if is exists"
+if [ -f ${1:condition} ]; then
+	${VISUAL}${0:}
+fi # [ -f $1 ]
 endsnippet
 
 snippet ife "Create a bash if/else statement"
