@@ -55,3 +55,7 @@ read -r -d '' ${1:VALUE} << ${2:EOM}
 ${VISUAL}${0:}
 $2
 endsnippet
+
+snippet curdir "Get the current directory in a bash script as an absolute path"
+$(readlink -f "$(dirname \$0)${VISUAL}")
+endsnippet
