@@ -9,6 +9,17 @@ if exists('g:loaded_SyntaxRange')
           \, lang, 'NonText')
   endfor
 
+  " exception for text, since the syntax file is named nosyntax
+  call SyntaxRange#Include(
+        \  '^```text$'
+        \, '^```$'
+        \, 'nosyntax', 'NonText')
+
+  call SyntaxRange#Include(
+        \  '^```$'
+        \, '^```$'
+        \, 'nosyntax', 'NonText')
+
   " exception for gherkin, since the syntax file is named cucumber
   call SyntaxRange#Include(
         \  '^```gherkin$'
