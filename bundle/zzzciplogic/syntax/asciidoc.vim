@@ -18,7 +18,7 @@ if exists('g:loaded_SyntaxRange')
   call SyntaxRange#Include(
         \  '\c\[source\s*,\s*text.*\]\s*\n[=-]\{4,\}\n'
         \, '\]\@<!\n[=-]\{4,\}\n'
-        \, 'nosyntax', 'NonText')
+        \, 'plaintext', 'NonText')
 endif
 endfunction
 

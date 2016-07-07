@@ -13,12 +13,12 @@ if exists('g:loaded_SyntaxRange')
   call SyntaxRange#Include(
         \  '^```text$'
         \, '^```$'
-        \, 'nosyntax', 'NonText')
+        \, 'plaintext', 'NonText')
 
   call SyntaxRange#Include(
         \  '^```$'
         \, '^```$'
-        \, 'nosyntax', 'NonText')
+        \, 'plaintext', 'NonText')
 
   " exception for gherkin, since the syntax file is named cucumber
   call SyntaxRange#Include(
