@@ -59,3 +59,7 @@ endsnippet
 snippet curdir "Get the current directory in a bash script as an absolute path"
 $(readlink -f "$(dirname \$0)${VISUAL}")
 endsnippet
+
+snippet path "Add an item to the PATH"
+export PATH="${VISUAL}${1:}:$PATH"${0:}
+endsnippet
