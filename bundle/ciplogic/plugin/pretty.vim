@@ -19,6 +19,7 @@ pretty_xml = xml.toprettyxml()
 buffer[:] = pretty_xml.splitlines()
 
 endpython
+set filetype=xml
 endfunction
 
 "
@@ -39,6 +40,7 @@ data = js.dumps(js.loads(content), indent=4)
 buffer[:] = data.splitlines()
 
 endpython
+set filetype=json.javascript
 endfunction
 
 " Command for pretty format XMLs and JSON

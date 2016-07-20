@@ -123,3 +123,22 @@ ${VISUAL}${0:}
 *Sample*
 endsnippet
 
+snippet inc "Include another file"
+include::${1:${VISUAL:file.adoc}}[]${0:}
+endsnippet
+
+snippet frontpage "The front page settings, with TOC"
+= ${1:Title}
+:toc: left
+:experimental:
+//:source-highlighter: pygments
+//:pygments-css: style
+:sectanchors:
+
+:leveloffset: +1
+
+// includes
+// include::otherfile.adoc[]
+
+:leveloffset: -1
+endsnippet
