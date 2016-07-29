@@ -11,9 +11,9 @@ import vim
 
 buffer = vim.current.buffer
 
-content = "\n".join(buffer.range(0, len(buffer) - 1))
+content = "\n".join(buffer.range(1, len(buffer)))
 
-xml = xml.dom.minidom.parseString(content)
+xml = xml.dom.minidom.parseString(content.strip())
 pretty_xml = xml.toprettyxml()
 
 buffer[:] = pretty_xml.splitlines()
@@ -34,8 +34,8 @@ import vim
 
 buffer = vim.current.buffer
 
-content = "\n".join(buffer.range(0, len(buffer) - 1))
-data = js.dumps(js.loads(content), indent=4)
+content = "\n".join(buffer.range(1, len(buffer)))
+data = js.dumps(js.loads(content.strip()), indent=2)
 
 buffer[:] = data.splitlines()
 
