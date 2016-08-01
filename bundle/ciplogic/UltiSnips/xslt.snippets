@@ -66,11 +66,11 @@ snippet copy-of
 <xsl:copy-of select="${1:@*|node()}"/>${0:}
 endsnippet
 
-snippet valueof
+snippet valueof "value-of" i
 <xsl:value-of select="${1:.}"/>${0:}
 endsnippet
 
-snippet value-of
+snippet value-of "value-of" i
 <xsl:value-of select="${1:.}"/>${0:}
 endsnippet
 
@@ -98,3 +98,8 @@ snippet param "Add an external parameter"
 <xsl:param name="${1:name}"/>
 endsnippet
 
+snippet foreach "for-each"
+<xsl:for-each select="${1:..}">
+	${VISUAL}${0:}
+</xsl:for-each>
+endsnippet
