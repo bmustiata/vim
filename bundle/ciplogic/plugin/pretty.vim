@@ -43,6 +43,37 @@ endpython
 set filetype=json.javascript
 endfunction
 
+"
+" This function sends the current buffer into html-beautify.
+" Install: npm install -g js-beautify
+"
+function! PrettyHtml()
+%!html-beautify
+set filetype=html
+endfunction
+
+"
+" This function sends the current buffer into html-beautify.
+" Install: npm install -g js-beautify
+"
+function! PrettyJs()
+%!js-beautify
+set filetype=javascript
+endfunction
+
+"
+" This function sends the current buffer into html-beautify.
+" Install: npm install -g js-beautify
+"
+function! PrettyCss()
+%!css-beautify
+set filetype=css
+endfunction
+
 " Command for pretty format XMLs and JSON
 command PrettyXml call PrettyXml()
 command PrettyJson call PrettyJson()
+command PrettyHtml call PrettyHtml()
+command PrettyCss call PrettyCss()
+command PrettyJs call PrettyJs()
+
