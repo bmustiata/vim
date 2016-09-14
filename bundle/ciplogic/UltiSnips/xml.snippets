@@ -9,7 +9,7 @@ snippet m "Create a multi node."
 endsnippet
 
 snippet n "Create a single node."
-<${1:name}>${VISUAL}${0:}</${1/(.*?)\s.*/$1/}>
+<${1:name}>${VISUAL}${2:}</${1/(.*?)\s.*/$1/}>${0:}
 endsnippet
 
 snippet c "Create a comment."
